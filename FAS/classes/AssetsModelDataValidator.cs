@@ -42,6 +42,7 @@ namespace FAS
                 throw new ArgumentException("-This item requires serial.");
             }
         }
+        
         private void EmployeeIdIsGreaterThanZero() {
             if(_assetModel.EmployeeId == 0 ){
                 throw new ArgumentException("- Employee ID is required");

@@ -18,9 +18,13 @@ namespace FAS
             _connection = new Connection();
             _serial_list = serial_list;
         }
+        
         public List<Serial> GetAllSerialNumbersPerItemId(int item_id) {
             List<Serial> serialList = new List<Serial>();
-            string query = @"SELECT * from item_serials where item_id = @item_id AND used = 0 AND deleted = 0";
+            string query = @"SELECT * from 
+                            item_serials where
+                            item_id = @item_id AND 
+                            used = 0 AND deleted = 0";
             using (var connection = _connection.GetConnection())
             {
                 using (var cmd = new MySqlCommand(query,connection))

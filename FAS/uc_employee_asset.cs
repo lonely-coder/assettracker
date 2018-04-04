@@ -42,7 +42,7 @@ namespace FAS
                 source.DataSource = assetList;
                 dataGridView1.DataSource = source;
                 dataGridView1.Columns["Id"].Visible = false;
-                //dataGridView1.Columns["EmployeeId"].Visible = false;
+                dataGridView1.Columns["EmployeeId"].Visible = false;
                 dataGridView1.Columns["Employee"].Visible = false;
                 dataGridView1.ClearSelection();
             }

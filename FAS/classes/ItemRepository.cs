@@ -104,7 +104,19 @@ namespace FAS
             }
             return items;
         }
-        
+        public bool ItemIsAvailable(int item_id)
+        {
+            string query = @"SELECT count(*) FROM item_serials WHERE item_id = @id AND used = 0 AND deleted = 0";
+
+            using (var connection = _connection.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", item_id);
+                    return (Convert.ToInt32(cmd.ExecuteScalar()) > 0);
+                }
+            }
+        }
         public List<Items> GetAllItems(string parameter) {
 
             List<Items> itemList = new List<Items>();

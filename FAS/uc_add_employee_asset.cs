@@ -9,7 +9,8 @@ namespace FAS
         private int _employee_id = 0;
         private int _item_serial = 0;
         private bool _item_has_serial = false;
-        private bool _item_is_available = false;
+
+        ItemRepository itemRepository = new ItemRepository();
         public uc_add_employee_asset()
         {
             InitializeComponent();
@@ -22,13 +23,7 @@ namespace FAS
                 txt_position.Clear();
             }
         }
-        private void EnableControrlsForEmployeeInfo()
-        {
-            lbl_emp_id_not_found.Visible = !(_employee_id > 0);
-            txt_name.Enabled = !(_employee_id > 0);
-            txt_dept.Enabled = !(_employee_id > 0);
-            txt_position.Enabled = !(_employee_id > 0);
-        }
+        
 
         private void SetMatchedEmployeeInformation()
         {
@@ -41,51 +36,45 @@ namespace FAS
                 txt_position.Text = employee.Position.PositionName.ToString();
             }
             ClearEmpInfoIfEmpIdIsZero();
-
-            lbl_emp_id_not_found.Visible = !(_employee_id > 0);
-            EnableControrlsForEmployeeInfo();
         }        
-        private void SetMatchedItemInformationOn()
+        private void GetItem()
         {
-            numberic_up_down_quantity.Value = 0;
-            ItemRepository itemManager = new ItemRepository();
-            Items items = itemManager.GetItem(txt_model.Text);
+            Items items = itemRepository.GetItem(txt_model.Text);
             if (items.Id > 0)
             {
                 _item_id = items.Id;
-                _item_has_serial = items.HasSerial == 1;
-                _item_is_available = ((items.Quantity - items.OnLoan) < 0);
-                lbl_serial_required.Visible = _item_has_serial;
-                metroComboBox1.Enabled = _item_has_serial;
-                numberic_up_down_quantity.Enabled = !_item_has_serial;
-                ItemPriceSuggestion();
-                if (_item_has_serial)
-                {
+                ItemRequiresSerial(items.HasSerial == 1);
+                lbl_emp_id_not_found.Text = "";
+            }
+        }
+        private void ItemRequiresSerial(bool serial_required) {
+            switch (serial_required) {
+                case true:
+                    lbl_serial_required.Text = "Serial Number is required.";
+                    metroComboBox1.Enabled = true;
                     numberic_up_down_quantity.Value = 1;
                     GetAvailableSerial();
-                }
-                else {
-                    lbl_serial_required.Text = "This item is not serialized";
-                    lbl_serial_required.Visible = true;
-                }
-                
-
-                if (items.Quantity == 0) 
-                    lbl_item_not_found.Visible = true;
-                    lbl_item_not_found.Text = "Out of stock.";
-                
+                    
+                    break;
+                case false:
+                    lbl_serial_required.Text = "This item is not serialized.";
+                    metroComboBox1.Enabled = false;
+                    numberic_up_down_quantity.Value = 0;
+                    metroComboBox1.DataSource = null;
+                    ItemPriceSuggestion();
+                    break;
+                default:
+                    lbl_serial_required.Text = "";
+                    break;
             }
-            else {
-                numberic_up_down_quantity.Value = 0;
-                lbl_serial_not_available.Visible = false;
-            }
-            
+            numberic_up_down_quantity.Enabled = !serial_required;
+            _item_has_serial = serial_required;
         }
         private void GetAvailableSerial()
         {
             SerialRepository serialRepository = new SerialRepository();
             var list = serialRepository.GetAllSerialNumbersPerItemId(_item_id);
-            list.Insert(0,new Serial() { SerialNumber = "-SELECT-"});
+            list.Insert(0, new Serial() { SerialNumber = "-Select-" });
             metroComboBox1.DisplayMember = "SerialNumber";
             metroComboBox1.ValueMember = "Id";
             metroComboBox1.DataSource = list;
@@ -95,11 +84,9 @@ namespace FAS
             EmployeeRepository employeeRepository = new EmployeeRepository();
             var employee_list = employeeRepository.selectAll(txt_employee_id.Text);
             AutoCompleteStringCollection namec = new AutoCompleteStringCollection();
-            
                 foreach (var list in employee_list )
                 {
                     namec.Add(list.EmployeeID);
-
                 }   
             txt_employee_id.AutoCompleteCustomSource = namec;
         }
@@ -225,9 +212,8 @@ namespace FAS
             metroComboBox1.DataSource = null;
             txt_property_tag.Clear();
             numberic_up_down_quantity.Value = 0;
-            lbl_emp_id_not_found.Visible = false;
-            lbl_serial_required.Visible = false;
             txt_employee_id.Focus();
+            lbl_serial_required.Text = "";
         }
         private void errorUiHandler(string error) {
             string _error = error;
@@ -257,16 +243,21 @@ namespace FAS
         }
         private void txt_model_TextChanged(object sender, EventArgs e)
         {
-            SetMatchedItemInformationOn();
-            if (txt_model.Text.Length > 0)
-            {
-                lbl_item_not_found.Visible = _item_id == 0;
+            GetItem();
+
+            if (txt_model.Text.Length > 0) {
+                lbl_item_not_found.Visible = (_item_id == 0);
             }
         }
 
         private void txt_employee_id_TextChanged(object sender, EventArgs e)
         {
             SetMatchedEmployeeInformation();
+            if (txt_employee_id.Text.Length > 0 && _employee_id == 0)
+            {
+                lbl_emp_id_not_found.Text = "Employee ID not found";
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -290,6 +281,21 @@ namespace FAS
             _item_serial = Convert.ToInt32(metroComboBox1.SelectedValue);
             Console.WriteLine(cb_price_list.SelectedValue);
             ItemPriceForDefinedSerial();
+        }
+
+        private void txt_model_Leave(object sender, EventArgs e)
+        {
+            if (!itemRepository.ItemIsAvailable(_item_id) && _item_has_serial && txt_model.Text.Length >0)
+            {
+                MessageBox.Show("This item is not available!\n -All Items is allocated to employees.\n -Out of stock.");
+                txt_model.Clear();
+                txt_model.Focus();
+                _item_id = 0;
+                numberic_up_down_quantity.Value = 0;
+                numberic_up_down_quantity.Enabled = true;
+                lbl_serial_required.Text = " ";
+                metroComboBox1.DataSource = null;
+            }
         }
     }
 }

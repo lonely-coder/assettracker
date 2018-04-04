@@ -18,30 +18,16 @@ namespace FAS
 
             string query = $@"SELECT 
                 assets.id as `Asset Id`,
-                IFNULL(assets.property_tag,'N/A') as `Property Tag`,
-                employees.id as `emp_id`,
-                employees.first_name as `First Name`,
-                employees.last_name as `Last Name`,
-                employees.employee_id as `Employee Id`,
-                departments.id as `Dept Id`,
-                departments.department_name as `Dept Name`,
-                positions.id as `Pos Id`,
-                positions.position_name as `Pos Name`,
+                IF(assets.property_tag= '','n/a',assets.property_tag) as `Property Tag`,
                 items.id as `Item Id`,
                 items.model as `Model`,
                 IFNULL(item_serials.id,0) as `Item Serial Id`,
                 IFNULL(item_serials.serial_number,'N/A') as `Serial Number`,
                 assets.asset_price as `Amount`    ,
-                assets.date_acquired as `Date Acquired`,
+                DATE(assets.date_acquired) as `Date Acquired`,
                 assets.quantity as `Quantity`
                 FROM item_serials RIGHT JOIN(
-                items LEFT JOIN(
-                positions INNER JOIN(
-                departments INNER JOIN(
-                employees RIGHT JOIN assets 
-                ON employees.id = assets.employee_id) 
-                ON departments.id = employees.department_id)
-                ON positions.id = employees.position_id)
+                items LEFT JOIN assets 
                 ON items.id = assets.item_id)
                 ON item_serials.id = assets.serial_id
                 WHERE assets.employee_id = @id
@@ -61,28 +47,10 @@ namespace FAS
                                 {
                                     Id = int.Parse(reader["Asset Id"].ToString()),
                                     PropertyTag = reader["Property Tag"].ToString(),
-                                    //ItemId = int.Parse(reader["Item Id"].ToString()),
                                     Items = new Items()
                                     {
                                         Id = int.Parse(reader["Item Id"].ToString()),
                                         Model = reader["Model"].ToString()
-                                    },
-                                    //EmployeeId = int.Parse(reader["emp_id"].ToString()),
-                                    Employee = new Employee()
-                                    {
-                                        ID = int.Parse(reader["emp_id"].ToString()),
-                                        FirstName = reader["First Name"].ToString(),
-                                        LastName = reader["Last Name"].ToString(),
-                                        Department = new Department()
-                                        {
-                                            Id = int.Parse(reader["Dept Id"].ToString()),
-                                            DepartmentNames = reader["Dept Name"].ToString()
-                                        },
-                                        Position = new Position()
-                                        {
-                                            Id = int.Parse(reader["Pos Id"].ToString()),
-                                            PositionName = reader["Pos Name"].ToString()
-                                        }
                                     },
                                     Serial = new Serial()
                                     {

@@ -57,14 +57,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cb_price_list = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lbl_emp_id_not_found = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.cb_price_list = new MetroFramework.Controls.MetroComboBox();
             button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numberic_up_down_quantity)).BeginInit();
             this.panel1.SuspendLayout();
@@ -120,10 +120,8 @@
             this.lbl_serial_required.ForeColor = System.Drawing.Color.Red;
             this.lbl_serial_required.Location = new System.Drawing.Point(238, 412);
             this.lbl_serial_required.Name = "lbl_serial_required";
-            this.lbl_serial_required.Size = new System.Drawing.Size(74, 17);
+            this.lbl_serial_required.Size = new System.Drawing.Size(0, 17);
             this.lbl_serial_required.TabIndex = 28;
-            this.lbl_serial_required.Text = "(Required)";
-            this.lbl_serial_required.Visible = false;
             // 
             // lbl_item_not_found
             // 
@@ -273,6 +271,7 @@
             this.txt_model.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_model.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txt_model.TextChanged += new System.EventHandler(this.txt_model_TextChanged);
+            this.txt_model.Leave += new System.EventHandler(this.txt_model_Leave);
             // 
             // label8
             // 
@@ -581,6 +580,29 @@
             this.panel1.Size = new System.Drawing.Size(697, 538);
             this.panel1.TabIndex = 1;
             // 
+            // cb_price_list
+            // 
+            this.cb_price_list.FontSize = MetroFramework.MetroComboBoxSize.Tall;
+            this.cb_price_list.FormattingEnabled = true;
+            this.cb_price_list.ItemHeight = 29;
+            this.cb_price_list.Location = new System.Drawing.Point(137, 599);
+            this.cb_price_list.Name = "cb_price_list";
+            this.cb_price_list.Size = new System.Drawing.Size(158, 35);
+            this.cb_price_list.TabIndex = 38;
+            this.cb_price_list.UseSelectable = true;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FontSize = MetroFramework.MetroComboBoxSize.Tall;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 29;
+            this.metroComboBox1.Location = new System.Drawing.Point(138, 432);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(279, 35);
+            this.metroComboBox1.TabIndex = 37;
+            this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -627,10 +649,8 @@
             this.lbl_emp_id_not_found.ForeColor = System.Drawing.Color.Red;
             this.lbl_emp_id_not_found.Location = new System.Drawing.Point(301, 63);
             this.lbl_emp_id_not_found.Name = "lbl_emp_id_not_found";
-            this.lbl_emp_id_not_found.Size = new System.Drawing.Size(163, 17);
+            this.lbl_emp_id_not_found.Size = new System.Drawing.Size(0, 17);
             this.lbl_emp_id_not_found.TabIndex = 32;
-            this.lbl_emp_id_not_found.Text = "-Employee Id Not Found";
-            this.lbl_emp_id_not_found.Visible = false;
             // 
             // label19
             // 
@@ -654,29 +674,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(680, 165);
             this.panel2.TabIndex = 31;
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 29;
-            this.metroComboBox1.Location = new System.Drawing.Point(138, 432);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(279, 35);
-            this.metroComboBox1.TabIndex = 37;
-            this.metroComboBox1.UseSelectable = true;
-            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
-            // 
-            // cb_price_list
-            // 
-            this.cb_price_list.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.cb_price_list.FormattingEnabled = true;
-            this.cb_price_list.ItemHeight = 29;
-            this.cb_price_list.Location = new System.Drawing.Point(137, 599);
-            this.cb_price_list.Name = "cb_price_list";
-            this.cb_price_list.Size = new System.Drawing.Size(158, 35);
-            this.cb_price_list.TabIndex = 38;
-            this.cb_price_list.UseSelectable = true;
             // 
             // uc_add_employee_asset
             // 
