@@ -1,0 +1,862 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{875185B1-8FE0-4BEA-88A1-D30B0A0654A2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FAS</RootNamespace>
+    <AssemblyName>FAS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>C:\Users\alahuakbar\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C1CA3A912771A517596343D68BCD29355533D775</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>fas_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Treetog-Junior-Computer-ok.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.7.9\lib\net40\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>.resx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\AssetCreator.cs" />
+    <Compile Include="classes\AssetsModelDataValidator.cs" />
+    <Compile Include="classes\AssetsModel.cs" />
+    <Compile Include="classes\Asset.cs" />
+    <Compile Include="classes\AssetsRepository.cs" />
+    <Compile Include="classes\Connection.cs" />
+    <Compile Include="classes\Department.cs" />
+    <Compile Include="classes\ItemAvailabilityChecker.cs" />
+    <Compile Include="classes\ItemInventoryViewer.cs" />
+    <Compile Include="classes\ItemInventory.cs" />
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DamageItems.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DamageItems.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DepartmentAssets.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentAssets.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\Employee.cs" />
+    <Compile Include="EmployeeAssets.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeAssets.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\EmployeeRepository.cs" />
+    <Compile Include="Employeerpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employeerpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectDepartment.Designer.cs">
+      <DependentUpon>frmSelectDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_add_item_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_add_item_details.Designer.cs">
+      <DependentUpon>frm_add_item_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_add_new_item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_add_new_item.Designer.cs">
+      <DependentUpon>frm_add_new_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_add_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_add_user.Designer.cs">
+      <DependentUpon>frm_add_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_browse_employee_add_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_browse_employee_add_user.Designer.cs">
+      <DependentUpon>frm_browse_employee_add_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_dashboard.Designer.cs">
+      <DependentUpon>frm_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_delete_asset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_delete_asset.Designer.cs">
+      <DependentUpon>frm_delete_asset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_browse_item_for_asset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_browse_item_for_asset.Designer.cs">
+      <DependentUpon>frm_browse_item_for_asset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_item_lookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_item_lookup.Designer.cs">
+      <DependentUpon>frm_item_lookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_item_per_model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_item_per_model.Designer.cs">
+      <DependentUpon>frm_item_per_model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_preview_all_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_preview_all_items.Designer.cs">
+      <DependentUpon>frm_preview_all_items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_preview_assets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_preview_assets.designer.cs">
+      <DependentUpon>frm_preview_assets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_preview_employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_preview_employees.designer.cs">
+      <DependentUpon>frm_preview_employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_preview_scrap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_preview_scrap.Designer.cs">
+      <DependentUpon>frm_preview_scrap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_preview_vendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_preview_vendors.Designer.cs">
+      <DependentUpon>frm_preview_vendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_print_per_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_print_per_department.Designer.cs">
+      <DependentUpon>frm_print_per_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_scrap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_scrap.Designer.cs">
+      <DependentUpon>frm_scrap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_serial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_serial.Designer.cs">
+      <DependentUpon>frm_serial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_serial_management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_serial_management.Designer.cs">
+      <DependentUpon>frm_serial_management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_serial_numbers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_serial_numbers.Designer.cs">
+      <DependentUpon>frm_serial_numbers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_set_price_and_quantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_set_price_and_quantity.Designer.cs">
+      <DependentUpon>frm_set_price_and_quantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_test.Designer.cs">
+      <DependentUpon>frm_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\IDatabase.cs" />
+    <Compile Include="classes\ItemCreator.cs" />
+    <Compile Include="classes\ItemRepository.cs" />
+    <Compile Include="ItemList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\Items.cs" />
+    <Compile Include="classes\Logs.cs" />
+    <Compile Include="classes\Receipt.cs" />
+    <Compile Include="classes\ReceiptRepository.cs" />
+    <Compile Include="classes\Remarks.cs" />
+    <Compile Include="classes\Serial.cs" />
+    <Compile Include="classes\SerialRepository.cs" />
+    <Compile Include="classes\ItemSerialProvider.cs" />
+    <Compile Include="uc_add_employee_asset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_add_employee_asset.Designer.cs">
+      <DependentUpon>uc_add_employee_asset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_add_item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_add_item.Designer.cs">
+      <DependentUpon>uc_add_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_add_item_2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_add_item_2.Designer.cs">
+      <DependentUpon>uc_add_item_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_vendor_list.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_vendor_list.Designer.cs">
+      <DependentUpon>uc_vendor_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\UserManager.cs" />
+    <Compile Include="VendorList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\Category.cs" />
+    <Compile Include="frm_receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_receipt.Designer.cs">
+      <DependentUpon>frm_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_item_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_item_detail.Designer.cs">
+      <DependentUpon>frm_item_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_items.Designer.cs">
+      <DependentUpon>frm_items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_department_picker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_department_picker.Designer.cs">
+      <DependentUpon>frm_department_picker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Position.cs" />
+    <Compile Include="classes\Condition.cs" />
+    <Compile Include="classes\Departments.cs" />
+    <Compile Include="classes\SubCategory.cs" />
+    <Compile Include="uc_add_assets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_add_assets.Designer.cs">
+      <DependentUpon>uc_add_assets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_employee_asset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_employee_asset.Designer.cs">
+      <DependentUpon>uc_employee_asset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_employee_list.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_employee_list.Designer.cs">
+      <DependentUpon>uc_employee_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_item_list.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_item_list.Designer.cs">
+      <DependentUpon>uc_item_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_employee_with_assets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_employee_with_assets.Designer.cs">
+      <DependentUpon>uc_employee_with_assets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_item_inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_item_inventory.Designer.cs">
+      <DependentUpon>uc_item_inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Vendors.cs" />
+    <Compile Include="frm_fas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_fas.designer.cs">
+      <DependentUpon>frm_fas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Users.cs" />
+    <Compile Include="classes\Employees.cs" />
+    <Compile Include="frm_add_asset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_add_asset.Designer.cs">
+      <DependentUpon>frm_add_asset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_add_vendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_add_vendors.Designer.cs">
+      <DependentUpon>frm_add_vendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_vendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_vendors.Designer.cs">
+      <DependentUpon>frm_vendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_employee_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_employee_info.Designer.cs">
+      <DependentUpon>frm_employee_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_employees.Designer.cs">
+      <DependentUpon>frm_employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\DB.cs" />
+    <Compile Include="frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Item.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DamageItems.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DamageItems.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentAssets.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DepartmentAssets.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeAssets.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeAssets.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employeerpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Employeerpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectDepartment.resx">
+      <DependentUpon>frmSelectDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_add_item_details.resx">
+      <DependentUpon>frm_add_item_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_add_new_item.resx">
+      <DependentUpon>frm_add_new_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_add_user.resx">
+      <DependentUpon>frm_add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_browse_employee_add_user.resx">
+      <DependentUpon>frm_browse_employee_add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_dashboard.resx">
+      <DependentUpon>frm_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_delete_asset.resx">
+      <DependentUpon>frm_delete_asset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_browse_item_for_asset.resx">
+      <DependentUpon>frm_browse_item_for_asset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_item_lookup.resx">
+      <DependentUpon>frm_item_lookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_item_per_model.resx">
+      <DependentUpon>frm_item_per_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_preview_all_items.resx">
+      <DependentUpon>frm_preview_all_items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_preview_assets.resx">
+      <DependentUpon>frm_preview_assets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_preview_employees.resx">
+      <DependentUpon>frm_preview_employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_preview_scrap.resx">
+      <DependentUpon>frm_preview_scrap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_preview_vendors.resx">
+      <DependentUpon>frm_preview_vendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_print_per_department.resx">
+      <DependentUpon>frm_print_per_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_receipt.resx">
+      <DependentUpon>frm_receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_items.resx">
+      <DependentUpon>frm_items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_department_picker.resx">
+      <DependentUpon>frm_department_picker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_item_detail.resx">
+      <DependentUpon>frm_item_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_add_asset.resx">
+      <DependentUpon>frm_add_asset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_fas.resx">
+      <DependentUpon>frm_fas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_add_vendors.resx">
+      <DependentUpon>frm_add_vendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_scrap.resx">
+      <DependentUpon>frm_scrap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_serial.resx">
+      <DependentUpon>frm_serial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_serial_management.resx">
+      <DependentUpon>frm_serial_management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_serial_numbers.resx">
+      <DependentUpon>frm_serial_numbers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_set_price_and_quantity.resx">
+      <DependentUpon>frm_set_price_and_quantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_test.resx">
+      <DependentUpon>frm_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_vendors.resx">
+      <DependentUpon>frm_vendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_employee_info.resx">
+      <DependentUpon>frm_employee_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_employees.resx">
+      <DependentUpon>frm_employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="uc_add_assets.resx">
+      <DependentUpon>uc_add_assets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_add_employee_asset.resx">
+      <DependentUpon>uc_add_employee_asset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_add_item.resx">
+      <DependentUpon>uc_add_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_add_item_2.resx">
+      <DependentUpon>uc_add_item_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_employee_asset.resx">
+      <DependentUpon>uc_employee_asset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_employee_list.resx">
+      <DependentUpon>uc_employee_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_item_list.resx">
+      <DependentUpon>uc_item_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_employee_with_assets.resx">
+      <DependentUpon>uc_employee_with_assets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_item_inventory.resx">
+      <DependentUpon>uc_item_inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_vendor_list.resx">
+      <DependentUpon>uc_vendor_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VendorList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="fas_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\add - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Add Employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\add_asset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.forklift.load.dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.forklift.load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.group.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.group.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.group.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.home.dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.key.old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.multiple.dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.multiple.magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.profile.add.clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.profile.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.profile.assets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.profile.dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.people.profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\appbar.save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\assets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\employees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\ic_person_add_white_24dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Live Messenger alt 3_mirror.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\magnify 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\record.dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\serach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Treetog-Junior-Computer-ok.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
