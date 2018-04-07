@@ -175,7 +175,13 @@ namespace FAS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            EmployeeList();
+            if (txt_filter.Text.Length == 0)
+            {
+                MessageBox.Show("Not found");
+            }
+            else {
+                EmployeeList();
+            }
         }
     }
 }

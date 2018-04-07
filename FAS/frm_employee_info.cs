@@ -54,6 +54,12 @@ namespace FAS
             this._privilege_id = user.SelectUser();
 
         }
+        private void showEmployeeList() {
+            if (_employee_list != null)
+            {
+                _employee_list.EmployeeList();
+            }
+        }
         public void ClearFields()
         {
             txt_empid.Clear();
@@ -96,15 +102,13 @@ namespace FAS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5000; i++)
-            {
                 try
                 {
                     Employee employee = new Employee();
                     EmployeeRepository employeeRepository = new EmployeeRepository(employee);
                     employee.FirstName = txt_firstName.Text ;
-                    employee.LastName = txt_lastName.Text + i;
-                    employee.EmployeeID = txt_empid.Text + i;
+                    employee.LastName = txt_lastName.Text;
+                    employee.EmployeeID = txt_empid.Text;
                     employee.Department = new Department()
                     {
                         Id = int.Parse(cb_department.SelectedValue.ToString())
@@ -118,17 +122,18 @@ namespace FAS
                     {
                         case 0:
                             employeeRepository.Insert();
-                            //MessageBox.Show("Records has been saved!");
-                            //ClearFields();
+                            MessageBox.Show("Records has been saved!");
+                            ClearFields();
                             break;
                         default:
                             employee.ID = this._employee_id;
                             employeeRepository.Update();
                             MessageBox.Show("Records has been Updated!");
-                            //ClearFields();
+                            ClearFields();
                             break;
                     }
-                    _employee_list.EmployeeList();
+                showEmployeeList();
+                    
                     this.Close();
 
                 }
@@ -136,8 +141,6 @@ namespace FAS
                 {
                     MessageBox.Show(ex.Message);
                 } 
-            }
-
         }
         private void btn_cancel_Click_2(object sender, EventArgs e)
         {

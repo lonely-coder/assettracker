@@ -76,7 +76,17 @@ namespace FAS
         }
         public double Price
         {
-            get;set;
+            get {
+                return _price;
+            } set {
+                if (value > 0)
+                {
+                    _price = value;
+                }
+                else {
+                    throw new ArgumentException("-Invalid price");
+                }
+            }
         }
         public int Quantity
         {

@@ -78,8 +78,8 @@ namespace FAS
             lbl_numbers_of_serial.Visible = metroCheckBox1.Checked.Equals(true) && ((numericUpDown_quantity.Value - dg_serialnumbers.Rows.Count)> 0);
             lbl_numbers_of_serial.Text = string.Format("Please provide {0} serial number(s)", numericUpDown_quantity.Value - dg_serialnumbers.Rows.Count);
             txt_serial.Enabled = metroCheckBox1.Checked.Equals(true) && ((numericUpDown_quantity.Value - dg_serialnumbers.Rows.Count) > 0);
-            txt_serial.Focus();
             dg_serialnumbers.Enabled = metroCheckBox1.Checked.Equals(true) && ((numericUpDown_quantity.Value - dg_serialnumbers.Rows.Count) > 0);
+            
         }
         private void errorUiHandler(string error)
         {
@@ -188,6 +188,7 @@ namespace FAS
             }
             catch (Exception ex)
             {
+                //MetroFramework.MetroMessageBox.Show(this,ex.Message);
                 errorUiHandler(ex.Message);
             }
         }
@@ -324,7 +325,7 @@ namespace FAS
             if (numericUpDown_quantity.Value < dg_serialnumbers.RowCount)
             {
                 MessageBox.Show("Quantity cannot be less than Serial Numbers provided below.");
-                numericUpDown_quantity.Value += 1;
+                numericUpDown_quantity.Value = dg_serialnumbers.Rows.Count;
             }
             else {
                 EnableSerialManager();
@@ -354,6 +355,7 @@ namespace FAS
         private void numericUpDown_quantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             lbl_numbers_of_serial.Visible =  (metroCheckBox1.Checked == true);
+            numericUpDown_quantity.Focus();
         }
 
 

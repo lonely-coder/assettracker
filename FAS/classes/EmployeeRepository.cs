@@ -192,14 +192,14 @@ namespace FAS
                        ON employees.department_id = departments.id)
                        ON positions.id = employees.position_id
                        WHERE 
-                       employee_id LIKE @employee_id";
+                       CONCAT(employee_id,' ',first_name,' ',last_name) LIKE @param";
 
             try
             {
                 using (MySqlConnection connection = _connection.GetConnection()) {
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@employee_id", '%' + param + '%');
+                        cmd.Parameters.AddWithValue("@param", '%' + param + '%');
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read()) {

@@ -158,8 +158,11 @@
     <Compile Include="classes\Connection.cs" />
     <Compile Include="classes\Department.cs" />
     <Compile Include="classes\ItemAvailabilityChecker.cs" />
+    <Compile Include="classes\ItemDataValidator.cs" />
+    <Compile Include="classes\ItemDescriptionCreator.cs" />
     <Compile Include="classes\ItemInventoryViewer.cs" />
     <Compile Include="classes\ItemInventory.cs" />
+    <Compile Include="classes\ItemModel.cs" />
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

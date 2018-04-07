@@ -44,7 +44,11 @@ namespace FAS
             {
                 _item_id = items.Id;
                 ItemRequiresSerial(items.HasSerial == 1);
-                lbl_emp_id_not_found.Text = "";
+            }
+            lbl_item_not_found.Visible = _item_id == 0;
+
+            if (txt_model.Text.Length == 0) {
+                lbl_item_not_found.Visible = false;
             }
         }
         private void ItemRequiresSerial(bool serial_required) {
@@ -109,18 +113,24 @@ namespace FAS
         }
         private void ItemPriceSuggestion()
         {
-            ReceiptRepository receiptRepository= new ReceiptRepository();
-            var list = receiptRepository.ItemPriceRange(_item_id);
-            cb_price_list.ValueMember = "Price";
-            cb_price_list.DataSource = list;
+            if (_item_id>0)
+            {
+                ReceiptRepository receiptRepository = new ReceiptRepository();
+                var list = receiptRepository.ItemPriceRange(_item_id);
+                cb_price_list.ValueMember = "Price";
+                cb_price_list.DataSource = list; 
+            }
 
         }
         private void ItemPriceForDefinedSerial() {
-            ReceiptRepository receiptRepository = new ReceiptRepository();
-            var list = receiptRepository.GetPrice(_item_serial);
+            if (_item_serial > 0) {
+                ReceiptRepository receiptRepository = new ReceiptRepository();
+                var list = receiptRepository.GetPrice(_item_serial);
 
-            cb_price_list.ValueMember = "Price";
-            cb_price_list.DataSource = list;
+                cb_price_list.ValueMember = "Price";
+                cb_price_list.DataSource = list;
+            }
+            
         }
         private AssetsModel InitializeAssetModel() {
 
@@ -181,6 +191,8 @@ namespace FAS
 
                     MessageBox.Show("Records has been saved.");
                     success =  true;
+                    cb_price_list.DataSource = null;
+                    metroComboBox1.DataSource = null;
                 }
 
                 catch (Exception ex)
@@ -244,20 +256,20 @@ namespace FAS
         private void txt_model_TextChanged(object sender, EventArgs e)
         {
             GetItem();
-
-            if (txt_model.Text.Length > 0) {
-                lbl_item_not_found.Visible = (_item_id == 0);
-            }
+            
         }
 
         private void txt_employee_id_TextChanged(object sender, EventArgs e)
         {
             SetMatchedEmployeeInformation();
-            if (txt_employee_id.Text.Length > 0 && _employee_id == 0)
-            {
-                lbl_emp_id_not_found.Text = "Employee ID not found";
+            
+            lbl_emp_id_not_found.Visible = _employee_id == 0;
+
+            if (txt_employee_id.Text.Length == 0) {
+                lbl_emp_id_not_found.Visible = false;
             }
             
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -279,7 +291,6 @@ namespace FAS
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             _item_serial = Convert.ToInt32(metroComboBox1.SelectedValue);
-            Console.WriteLine(cb_price_list.SelectedValue);
             ItemPriceForDefinedSerial();
         }
 

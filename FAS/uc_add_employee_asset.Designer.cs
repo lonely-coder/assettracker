@@ -649,8 +649,10 @@
             this.lbl_emp_id_not_found.ForeColor = System.Drawing.Color.Red;
             this.lbl_emp_id_not_found.Location = new System.Drawing.Point(301, 63);
             this.lbl_emp_id_not_found.Name = "lbl_emp_id_not_found";
-            this.lbl_emp_id_not_found.Size = new System.Drawing.Size(0, 17);
+            this.lbl_emp_id_not_found.Size = new System.Drawing.Size(156, 17);
             this.lbl_emp_id_not_found.TabIndex = 32;
+            this.lbl_emp_id_not_found.Text = "Employee ID not found";
+            this.lbl_emp_id_not_found.Visible = false;
             // 
             // label19
             // 
