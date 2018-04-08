@@ -300,12 +300,6 @@
     <Compile Include="uc_add_item.Designer.cs">
       <DependentUpon>uc_add_item.cs</DependentUpon>
     </Compile>
-    <Compile Include="uc_add_item_2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uc_add_item_2.Designer.cs">
-      <DependentUpon>uc_add_item_2.cs</DependentUpon>
-    </Compile>
     <Compile Include="uc_vendor_list.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -339,15 +333,8 @@
       <DependentUpon>frm_department_picker.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\Position.cs" />
-    <Compile Include="classes\Condition.cs" />
     <Compile Include="classes\Departments.cs" />
     <Compile Include="classes\SubCategory.cs" />
-    <Compile Include="uc_add_assets.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uc_add_assets.Designer.cs">
-      <DependentUpon>uc_add_assets.cs</DependentUpon>
-    </Compile>
     <Compile Include="uc_employee_asset.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -507,17 +494,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="uc_add_assets.resx">
-      <DependentUpon>uc_add_assets.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="uc_add_employee_asset.resx">
       <DependentUpon>uc_add_employee_asset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_add_item.resx">
       <DependentUpon>uc_add_item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uc_add_item_2.resx">
-      <DependentUpon>uc_add_item_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_employee_asset.resx">
       <DependentUpon>uc_employee_asset.cs</DependentUpon>

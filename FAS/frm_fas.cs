@@ -26,13 +26,11 @@ namespace FAS
 
         
         //classes
-        //uc_add_items _add_items;
-        uc_add_item_2 _add_item_2;
+        
         uc_employee_with_assets _employee_with_assets;
         employee_list_controller _employee_list;
         uc_item_list _item_list;
         uc_vendor_list _vendor_list;
-        uc_add_assets _add_assets;
         public frm_fas(int user_id)
         {
             InitializeComponent();

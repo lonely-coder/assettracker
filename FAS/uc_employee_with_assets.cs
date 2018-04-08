@@ -129,21 +129,8 @@ namespace FAS
 
         private void metroTextBox1_TextChanged_1(object sender, EventArgs e)
         {
-            //if (_assetsDT.Rows.Count > 0)
-            //{
-
-            //    (dg_employee_assets.DataSource as DataTable).DefaultView.RowFilter = "`Employee ID` + `Name` LIKE '%"+ metroTextBox1.Text.Replace("'","''")+"%'";
-
-            //}
+        
         }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            this.HideControls();
-            uc_add_assets _add_asset = new uc_add_assets(this);
-            this.Controls.Add(_add_asset);
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
