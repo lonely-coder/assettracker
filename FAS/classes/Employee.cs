@@ -11,8 +11,6 @@ namespace FAS
         private string _employee_id;
         private string _first_name;
         private string _last_name;
-        private Department _department;
-        private Position _position;
         private DateTime _date_hired;
 
         public int ID

@@ -45,6 +45,7 @@ namespace FAS
                 _item_id = items.Id;
                 ItemRequiresSerial(items.HasSerial == 1);
             }
+            lbl_serial_required.Visible = items.Id > 0;
             lbl_item_not_found.Visible = _item_id == 0;
 
             if (txt_model.Text.Length == 0) {
@@ -225,7 +226,7 @@ namespace FAS
             txt_property_tag.Clear();
             numberic_up_down_quantity.Value = 0;
             txt_employee_id.Focus();
-            lbl_serial_required.Text = "";
+            //lbl_serial_required.Text = "";
         }
         private void errorUiHandler(string error) {
             string _error = error;

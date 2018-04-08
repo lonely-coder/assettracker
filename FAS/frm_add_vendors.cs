@@ -19,19 +19,11 @@ namespace FAS
 
         Vendors vendors = new Vendors();
         Logs log = new Logs();
-        //frm_vendors _vendors;
         uc_vendor_list _vendors;
-        frm_vendors _addVendor;
         public frm_add_vendors()
         {
             InitializeComponent();
          
-        }
-        public frm_add_vendors(frm_vendors AddVendor)
-        {
-            InitializeComponent();
-            _addVendor = AddVendor;
-
         }
         public frm_add_vendors(uc_vendor_list Vendors)
         {

@@ -26,18 +26,13 @@ namespace FAS
         Position position = new Position();
         Departments department = new Departments();
         Logs log;
-        //forms
-        frm_employees _employees;
+        
        
         employee_assets_controller _transfer_assets;
-        public employee_list_controller()
-        {
-            InitializeComponent();
-        }
+        
         public employee_list_controller(int UserId)
         {
             InitializeComponent();
-            this.btn_add.Text = "New Employee";
             this._user_id = UserId;
             Users user = new Users();
 
@@ -78,9 +73,7 @@ namespace FAS
 
         private void UserControl2_Load(object sender, EventArgs e)
         {
-            if (this._privilege_id > 2) {
-                this.btn_add.Visible = false;
-            }
+            
         }
 
         private void txt_filter_TextChanged(object sender, EventArgs e)
@@ -92,7 +85,6 @@ namespace FAS
            }
             
         }
-
         private void dg_employees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var empId = int.Parse(dg_employees.CurrentRow.Cells["ID"].Value.ToString());
@@ -114,7 +106,6 @@ namespace FAS
                                 try
                                 {
                                     MessageBox.Show("Item Successfully Transfered");
-                                    this._employees.Close();
                                     this._transfer_assets._employeeId = int.Parse(_empId);
                                     this._transfer_assets.EmployeeAssets();
                                 }
@@ -125,7 +116,7 @@ namespace FAS
                                 }
                                 break;
                             default:
-                                this._employees.Close();
+                                
                                 break;
                         }
 
@@ -159,20 +150,7 @@ namespace FAS
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            switch (btn_add.Text)
-            {
-                case "Close":
-                    this._employees.Close();
-                    break;
-                default:
-                    frm_employee_info _new_employee = new frm_employee_info(this,this._user_id);
-                    _new_employee.ShowDialog();
-                    break;
-            }
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             if (txt_filter.Text.Length == 0)

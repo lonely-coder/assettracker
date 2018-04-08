@@ -147,14 +147,5 @@ namespace FAS
             }
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            this.panel_body.Controls.Clear();
-            frm_add_new_item _item = new frm_add_new_item();
-            _item.TopLevel = false;
-            this.panel_body.Controls.Add(_item);
-            _item.Show();
-
-        }
     }
 }

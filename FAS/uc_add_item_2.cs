@@ -208,8 +208,7 @@ namespace FAS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frm_browse_item_for_asset _item = new frm_browse_item_for_asset(this);
-            _item.ShowDialog();
+            
         }
 
         private void btn_return_Click(object sender, EventArgs e)

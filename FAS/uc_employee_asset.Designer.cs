@@ -37,13 +37,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_add_asset = new System.Windows.Forms.Button();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_emp_id = new System.Windows.Forms.TextBox();
             this.txt_dept = new System.Windows.Forms.TextBox();
             this.txt_pos = new System.Windows.Forms.TextBox();
             this.btn_print = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,24 +127,6 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Position : ";
             // 
-            // btn_add_asset
-            // 
-            this.btn_add_asset.BackColor = System.Drawing.Color.White;
-            this.btn_add_asset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            this.btn_add_asset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_asset.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_asset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            this.btn_add_asset.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_asset.Image")));
-            this.btn_add_asset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_asset.Location = new System.Drawing.Point(465, 474);
-            this.btn_add_asset.Name = "btn_add_asset";
-            this.btn_add_asset.Size = new System.Drawing.Size(54, 35);
-            this.btn_add_asset.TabIndex = 8;
-            this.btn_add_asset.Text = "Add";
-            this.btn_add_asset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_add_asset.UseVisualStyleBackColor = false;
-            this.btn_add_asset.Click += new System.EventHandler(this.btn_new_Click);
-            // 
             // txt_name
             // 
             this.txt_name.BackColor = System.Drawing.SystemColors.Window;
@@ -193,46 +173,29 @@
             // 
             // btn_print
             // 
-            this.btn_print.BackColor = System.Drawing.Color.White;
+            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
             this.btn_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_print.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
             this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_print.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
+            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btn_print.ForeColor = System.Drawing.Color.White;
             this.btn_print.Image = ((System.Drawing.Image)(resources.GetObject("btn_print.Image")));
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(569, 474);
+            this.btn_print.Location = new System.Drawing.Point(586, 474);
             this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(54, 35);
+            this.btn_print.Size = new System.Drawing.Size(98, 47);
             this.btn_print.TabIndex = 14;
             this.btn_print.Text = "Print";
             this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_print.UseVisualStyleBackColor = false;
             this.btn_print.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            this.button1.Location = new System.Drawing.Point(187, 483);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 35);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Transfer Assets";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // employee_assets_controller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btn_add_asset);
             this.Controls.Add(this.btn_print);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_dept);
             this.Controls.Add(this.txt_pos);
@@ -258,12 +221,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_add_asset;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.TextBox txt_emp_id;
         private System.Windows.Forms.TextBox txt_dept;
         private System.Windows.Forms.TextBox txt_pos;
         private System.Windows.Forms.Button btn_print;
-        private System.Windows.Forms.Button button1;
     }
 }

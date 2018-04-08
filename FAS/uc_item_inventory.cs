@@ -30,7 +30,7 @@ namespace FAS
             
             ItemRepository itemRepository = new ItemRepository();
             Items items = itemRepository.GetItemById(_item_id);
-            lbl_model.Text = string.Format("{0}/{1}>{2}", items.CategoryId, items.SubCategoryId,items.Model); 
+            lbl_model.Text = string.Format("{0}",items.Model); 
             
 
         }

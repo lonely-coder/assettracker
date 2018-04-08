@@ -31,7 +31,7 @@ namespace FAS.classes
                 items  
                 ON items.id = item_receipt.item_id)
                 ON vendors.id = item_receipt.vendor_id
-                WHERE items.id = @id";
+                WHERE items.id = @id GROUP BY item_receipt.official_receipt";
 
                 using (var cmd = new MySqlCommand(query, _connection.GetConnection()))
                     {

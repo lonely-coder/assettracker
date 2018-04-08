@@ -69,9 +69,7 @@ namespace FAS
             
             this.btn_search.Visible = false;
             this.dg_employee_assets.Visible = false;
-            this.btn_add_asset.Visible = false;
-            //this.metroComboBox1.Visible = false;
-            //this.metroComboBox2.Visible = false;
+            
             this.metroTextBox1.Visible = false;
             //this.lbl_accountability.Visible = false;
         }
@@ -81,26 +79,12 @@ namespace FAS
             
             this.btn_search.Visible = true;
             this.dg_employee_assets.Visible = true;
-            this.btn_add_asset.Visible = true;
-            //this.metroComboBox1.Visible = true;
-            //this.metroComboBox2.Visible = true;
             this.metroTextBox1.Visible = true;
             //this.lbl_accountability.Visible = true;
         }
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            Users user = new Users();
-            user.Id = this._user_id;
-            this._privilege_id = user.SelectUser();
-            //if user has only hr privilege
-            if (this._privilege_id > 1)
-            {
-                btn_add_asset.Visible = false;
-            }
-            //this.EmployeesWithAssets();
-            this.Department();
-
-           
+            this.Department();  
         }
 
 

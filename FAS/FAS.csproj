@@ -158,10 +158,8 @@
     <Compile Include="classes\Connection.cs" />
     <Compile Include="classes\Department.cs" />
     <Compile Include="classes\ItemAvailabilityChecker.cs" />
-    <Compile Include="classes\ItemDataValidator.cs" />
     <Compile Include="classes\ItemDescriptionCreator.cs" />
     <Compile Include="classes\ItemInventoryViewer.cs" />
-    <Compile Include="classes\ItemInventory.cs" />
     <Compile Include="classes\ItemModel.cs" />
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
@@ -195,12 +193,6 @@
       <DependentUpon>Employeerpt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,53 +205,17 @@
     <Compile Include="frmSelectDepartment.Designer.cs">
       <DependentUpon>frmSelectDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_add_item_details.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_add_item_details.Designer.cs">
-      <DependentUpon>frm_add_item_details.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_add_new_item.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_add_new_item.Designer.cs">
-      <DependentUpon>frm_add_new_item.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_add_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_add_user.Designer.cs">
       <DependentUpon>frm_add_user.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_browse_employee_add_user.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_browse_employee_add_user.Designer.cs">
-      <DependentUpon>frm_browse_employee_add_user.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_dashboard.Designer.cs">
       <DependentUpon>frm_dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_delete_asset.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_delete_asset.Designer.cs">
-      <DependentUpon>frm_delete_asset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_browse_item_for_asset.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_browse_item_for_asset.Designer.cs">
-      <DependentUpon>frm_browse_item_for_asset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_item_lookup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_item_lookup.Designer.cs">
-      <DependentUpon>frm_item_lookup.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_item_per_model.cs">
       <SubType>Form</SubType>
@@ -308,30 +264,6 @@
     </Compile>
     <Compile Include="frm_scrap.Designer.cs">
       <DependentUpon>frm_scrap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_serial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_serial.Designer.cs">
-      <DependentUpon>frm_serial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_serial_management.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_serial_management.Designer.cs">
-      <DependentUpon>frm_serial_management.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_serial_numbers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_serial_numbers.Designer.cs">
-      <DependentUpon>frm_serial_numbers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_set_price_and_quantity.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_set_price_and_quantity.Designer.cs">
-      <DependentUpon>frm_set_price_and_quantity.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_test.cs">
       <SubType>Form</SubType>
@@ -400,12 +332,6 @@
     <Compile Include="frm_item_detail.Designer.cs">
       <DependentUpon>frm_item_detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_items.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_items.Designer.cs">
-      <DependentUpon>frm_items.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_department_picker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,35 +387,17 @@
     </Compile>
     <Compile Include="classes\Users.cs" />
     <Compile Include="classes\Employees.cs" />
-    <Compile Include="frm_add_asset.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_add_asset.Designer.cs">
-      <DependentUpon>frm_add_asset.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_add_vendors.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_add_vendors.Designer.cs">
       <DependentUpon>frm_add_vendors.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_vendors.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_vendors.Designer.cs">
-      <DependentUpon>frm_vendors.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_employee_info.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_employee_info.Designer.cs">
       <DependentUpon>frm_employee_info.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_employees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_employees.Designer.cs">
-      <DependentUpon>frm_employees.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\DB.cs" />
     <Compile Include="frm_login.cs">
@@ -521,42 +429,21 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Employeerpt.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelectDepartment.resx">
       <DependentUpon>frmSelectDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_add_item_details.resx">
-      <DependentUpon>frm_add_item_details.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_add_new_item.resx">
-      <DependentUpon>frm_add_new_item.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_add_user.resx">
       <DependentUpon>frm_add_user.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_browse_employee_add_user.resx">
-      <DependentUpon>frm_browse_employee_add_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_dashboard.resx">
       <DependentUpon>frm_dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_delete_asset.resx">
-      <DependentUpon>frm_delete_asset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_browse_item_for_asset.resx">
-      <DependentUpon>frm_browse_item_for_asset.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include=".resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_item_lookup.resx">
-      <DependentUpon>frm_item_lookup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_item_per_model.resx">
       <DependentUpon>frm_item_per_model.cs</DependentUpon>
@@ -582,17 +469,11 @@
     <EmbeddedResource Include="frm_receipt.resx">
       <DependentUpon>frm_receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_items.resx">
-      <DependentUpon>frm_items.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_department_picker.resx">
       <DependentUpon>frm_department_picker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_item_detail.resx">
       <DependentUpon>frm_item_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_add_asset.resx">
-      <DependentUpon>frm_add_asset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_fas.resx">
       <DependentUpon>frm_fas.cs</DependentUpon>
@@ -603,29 +484,11 @@
     <EmbeddedResource Include="frm_scrap.resx">
       <DependentUpon>frm_scrap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_serial.resx">
-      <DependentUpon>frm_serial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_serial_management.resx">
-      <DependentUpon>frm_serial_management.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_serial_numbers.resx">
-      <DependentUpon>frm_serial_numbers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_set_price_and_quantity.resx">
-      <DependentUpon>frm_set_price_and_quantity.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_test.resx">
       <DependentUpon>frm_test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_vendors.resx">
-      <DependentUpon>frm_vendors.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_employee_info.resx">
       <DependentUpon>frm_employee_info.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_employees.resx">
-      <DependentUpon>frm_employees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>

@@ -33,11 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_add_asset = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.dg_employee_assets = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_employee_assets)).BeginInit();
             this.SuspendLayout();
@@ -45,8 +43,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btn_add_asset);
             this.panel1.Controls.Add(this.btn_search);
             this.panel1.Controls.Add(this.metroTextBox1);
             this.panel1.Controls.Add(this.dg_employee_assets);
@@ -55,22 +51,6 @@
             this.panel1.Size = new System.Drawing.Size(697, 538);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // btn_add_asset
-            // 
-            this.btn_add_asset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
-            this.btn_add_asset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(128)))));
-            this.btn_add_asset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_asset.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_asset.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_add_asset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_asset.Location = new System.Drawing.Point(439, 461);
-            this.btn_add_asset.Name = "btn_add_asset";
-            this.btn_add_asset.Size = new System.Drawing.Size(120, 50);
-            this.btn_add_asset.TabIndex = 3;
-            this.btn_add_asset.Text = "Add Asset";
-            this.btn_add_asset.UseVisualStyleBackColor = false;
-            this.btn_add_asset.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // btn_search
             // 
@@ -160,24 +140,9 @@
             this.dg_employee_assets.RowHeadersVisible = false;
             this.dg_employee_assets.RowTemplate.Height = 28;
             this.dg_employee_assets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_employee_assets.Size = new System.Drawing.Size(675, 400);
+            this.dg_employee_assets.Size = new System.Drawing.Size(675, 433);
             this.dg_employee_assets.TabIndex = 19;
             this.dg_employee_assets.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_employee_assets_CellClick_1);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(565, 461);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // uc_employee_with_assets
             // 
@@ -199,7 +164,5 @@
         internal System.Windows.Forms.Button btn_search;
         internal MetroFramework.Controls.MetroTextBox metroTextBox1;
         internal System.Windows.Forms.DataGridView dg_employee_assets;
-        internal System.Windows.Forms.Button btn_add_asset;
-        internal System.Windows.Forms.Button button1;
     }
 }

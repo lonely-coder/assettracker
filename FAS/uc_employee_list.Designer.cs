@@ -34,9 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(employee_list_controller));
             this.dg_employees = new System.Windows.Forms.DataGridView();
             this.txt_filter = new MetroFramework.Controls.MetroTextBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_employees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +74,7 @@
             this.dg_employees.RowHeadersVisible = false;
             this.dg_employees.RowTemplate.Height = 28;
             this.dg_employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_employees.Size = new System.Drawing.Size(675, 400);
+            this.dg_employees.Size = new System.Drawing.Size(675, 439);
             this.dg_employees.TabIndex = 8;
             this.dg_employees.TabStop = false;
             this.dg_employees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_employees_CellClick);
@@ -117,21 +115,6 @@
             this.txt_filter.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_filter.TextChanged += new System.EventHandler(this.txt_filter_TextChanged);
             // 
-            // btn_add
-            // 
-            this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
-            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_add.Location = new System.Drawing.Point(439, 461);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(120, 50);
-            this.btn_add.TabIndex = 10;
-            this.btn_add.Text = "action";
-            this.btn_add.UseVisualStyleBackColor = false;
-            this.btn_add.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
@@ -149,27 +132,11 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(565, 461);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // employee_list_controller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txt_filter);
             this.Controls.Add(this.dg_employees);
@@ -182,10 +149,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_add;
         internal System.Windows.Forms.DataGridView dg_employees;
         internal MetroFramework.Controls.MetroTextBox txt_filter;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
     }
 }

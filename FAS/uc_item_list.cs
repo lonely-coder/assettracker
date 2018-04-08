@@ -45,19 +45,20 @@ namespace FAS
                 dg_item_grid.Columns["CategoryId"].Visible = false;
                 dg_item_grid.Columns["SubCategoryId"].Visible = false;
                 dg_item_grid.Columns["HasSerial"].Visible = false;
+                dg_item_grid.Columns["OnLoan"].Visible = false;
                 DataGridViewButtonColumn btn_preview = new DataGridViewButtonColumn();
                 btn_preview.HeaderText = "#";
                 btn_preview.Text = "Details";
                 btn_preview.UseColumnTextForButtonValue = true;
                 dg_item_grid.Columns.Add(btn_preview);
                 
-                /*
+                
                 DataGridViewButtonColumn btn2 = new DataGridViewButtonColumn();
                 btn2.HeaderText = "###";
                 btn2.Text = "Inventory";
                 btn2.UseColumnTextForButtonValue = true;
                 this.dg_item_grid.Columns.Add(btn2);
-                */
+                
                 dg_item_grid.ClearSelection();
             }
             catch (Exception ex)

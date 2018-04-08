@@ -58,8 +58,7 @@ namespace FAS
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            frm_browse_employee_add_user _browse = new frm_browse_employee_add_user(this);
-            _browse.ShowDialog();
+            
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -84,10 +83,5 @@ namespace FAS
             
         }
 
-        private void metroTextBox4_Click(object sender, EventArgs e)
-        {
-            frm_browse_employee_add_user _user = new frm_browse_employee_add_user(this);
-            _user.ShowDialog();
-        }
     }
 }

@@ -35,8 +35,7 @@ namespace FAS
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            frm_employees _employees = new frm_employees(this);
-            _employees.ShowDialog();
+            
         }
 
         public void Condition() {
@@ -71,16 +70,14 @@ namespace FAS
         {
             txt_serial.Clear();
             this._serial_id = 0;
-            frm_items _items = new frm_items(this);
-            _items.ShowDialog();
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             switch (this._item_id > 0 ) {
                 case true:
-                    frm_serial_numbers _serial = new frm_serial_numbers(this, _item_id);
-                    _serial.ShowDialog();
+                    
                     break;
                 default:
                     MessageBox.Show("You Must Select an Item First");
@@ -164,16 +161,14 @@ namespace FAS
 
         private void txt_emp_id_Click(object sender, EventArgs e)
         {
-            frm_employees _employees = new frm_employees(this);
-            _employees.ShowDialog();
+            
         }
 
         private void txt_model_Click(object sender, EventArgs e)
         {
             txt_serial.Clear();
             this._serial_id = 0;
-            frm_items _items = new frm_items(this);
-            _items.ShowDialog();
+            
         }
 
         private void txt_serial_Click(object sender, EventArgs e)
@@ -181,8 +176,7 @@ namespace FAS
             switch (this._item_id > 0)
             {
                 case true:
-                    frm_serial_numbers _serial = new frm_serial_numbers(this, _item_id);
-                    _serial.ShowDialog();
+                    
                     break;
                 default:
                     MessageBox.Show("You Must Select an Item First");
