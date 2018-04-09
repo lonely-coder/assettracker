@@ -62,8 +62,8 @@ namespace FAS
 
         private void frm_delete_scrap_Click(object sender, EventArgs e)
         {
-            frm_scrap _scrap = new frm_scrap();
-            _scrap.ShowDialog();
+            //frm_scrap _scrap = new frm_scrap();
+            //_scrap.ShowDialog();
         }
 
         private void btn_emp_list_Click(object sender, EventArgs e)

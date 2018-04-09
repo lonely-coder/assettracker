@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace FAS
 {
@@ -160,6 +162,53 @@ namespace FAS
 
             }
             return property_tag_match_found;
+        }
+        public DataTable SelectAssetsPerEmployee(int employee_id)
+        {
+            var data = new DataTable();
+            try
+            {
+                string query = $@"SELECT 
+                assets.id as `pkAccountability`,
+                assets.employee_id as   `pkEmployeeId`,
+                IFNULL(assets.property_tag,'N/A') as `Property Tag`,
+                CONCAT(employees.first_name,' ',employees.last_name) as `Name`,
+                employees.employee_id as `Employee Id`,
+                departments.department_name as `Department`,
+                positions.position_name as `Position`,
+                items.model as `Model`,
+                IFNULL(item_serials.serial_number,'N/A') as `Serial Number`,
+                assets.asset_price as `Amount`                
+                FROM item_serials RIGHT JOIN(items LEFT JOIN(positions INNER JOIN(
+                departments INNER JOIN(
+                employees RIGHT JOIN assets 
+                ON employees.id = assets.employee_id) 
+                ON departments.id = employees.department_id)
+                ON positions.id = employees.position_id)
+                ON items.id = assets.item_id)
+                ON item_serials.id = assets.serial_id
+                WHERE assets.employee_id = @id
+                AND assets.remarks IS NULL";
+
+                using (var connection = _connection.GetConnection())
+                {
+                    using (var cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", employee_id);
+                        using (var reader = cmd.ExecuteReader()) {
+                            while (reader.Read()) {
+                                data.Load(reader);
+                            }
+                        }
+                    }
+                }
+                
+            }
+            catch (MySqlException ex)
+            {
+                throw new ArgumentException(ex.ToString());
+            }
+            return data;
         }
 
     }

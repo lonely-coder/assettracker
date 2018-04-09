@@ -18,16 +18,14 @@ namespace FAS
         private void Departments() {
             Departments department = new Departments();
 
-            DataTable _dt = department.LoadDepartments();
-            metroComboBox1.DisplayMember = _dt.Columns["department_name"].ToString();
-            metroComboBox1.ValueMember = _dt.Columns["id"].ToString();
-            metroComboBox1.DataSource = _dt;
+            var list = department.DepartmentList();
+            var source = new BindingSource();
+            list.Insert(0,new Department() { DepartmentNames = "-Select-"});
+            source.DataSource = list;
+            metroComboBox1.ValueMember = "Id";
+            metroComboBox1.DisplayMember = "DepartmentNames";
+            metroComboBox1.DataSource = source;
 
-            DataRow row = _dt.NewRow();
-            row["department_name"] = "Select A Department";
-            row["id"] = 0;
-
-            _dt.Rows.InsertAt(row, 0);
             metroComboBox1.SelectedIndex = 0;
         }
         private void frmSelectDepartment_Load(object sender, EventArgs e)

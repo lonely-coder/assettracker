@@ -16,17 +16,34 @@ namespace FAS
         {
             InitializeComponent();
         }
-        public frm_preview_assets(int EmployeeId)
+        public frm_preview_assets(int employee_Id)
         {
             InitializeComponent();
-            _employee_id = EmployeeId;
+            _employee_id = employee_Id;
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            EmployeeAssets1.Refresh();
-            EmployeeAssets1.SetDatabaseLogon("fas_user", "d34thn0te");
-            EmployeeAssets1.SetParameterValue("employee_id",this._employee_id);
-            crystalReportViewer1.ReportSource = EmployeeAssets1;
+            
+
+        }
+
+        private void frm_preview_assets_Load(object sender, EventArgs e)
+        {
+            AssetsRepository assetRepository = new AssetsRepository();
+            
+            var data = assetRepository.SelectAssetsPerEmployee(_employee_id);
+
+            DataSet ds = new DataSet();
+            ds.Tables.Add(data);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                EmployeeAssets1.SetParameterValue("emp_id", _employee_id);
+                EmployeeAssets1.SetDataSource(ds.Tables[0]);
+            }
+            else {
+                MessageBox.Show("No data.");
+            }
         }
     }
 }

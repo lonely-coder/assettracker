@@ -28,33 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.EmployeeAssets1 = new FAS.EmployeeAssets();
-            this.EmployeeAssets2 = new FAS.EmployeeAssets();
+            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.EmployeeAssets1 = new FAS.Reports.EmployeeAssets();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crystalReportViewer2
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.EmployeeAssets2;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(691, 346);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer2.ActiveViewIndex = 0;
+            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer2.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer2.Name = "crystalReportViewer2";
+            this.crystalReportViewer2.ReportSource = this.EmployeeAssets1;
+            this.crystalReportViewer2.Size = new System.Drawing.Size(802, 412);
+            this.crystalReportViewer2.TabIndex = 0;
+            this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frm_preview_assets
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 346);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.ClientSize = new System.Drawing.Size(802, 412);
+            this.Controls.Add(this.crystalReportViewer2);
             this.Name = "frm_preview_assets";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.frm_preview_assets_Load);
             this.ResumeLayout(false);
 
         }
@@ -62,7 +58,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private EmployeeAssets EmployeeAssets1;
-        private EmployeeAssets EmployeeAssets2;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
+        private Reports.EmployeeAssets EmployeeAssets1;
     }
 }

@@ -6,11 +6,15 @@ using System.Data;
 using MySql.Data.MySqlClient;
 namespace FAS
 {
-    public class Departments:DB
+    public class Departments
     {
         private int _id;
         private string _department;
         private DataTable _dt;
+        Connection _connection;
+        public Departments() {
+            _connection = new Connection();
+        }
 
         Logs log = new Logs();
         public int Id {
@@ -39,21 +43,36 @@ namespace FAS
                 }
             }
         }
-        public DataTable LoadDepartments() {
-            
+        public List<Department> DepartmentList() {
+            string query = "SELECT * from departments";
+            var data = new List<Department>();
             try
             {
-                this.Query = "SELECT * from departments";
-                this._dt = new DataTable();
-                this._dt = this.Select();
+                using (var conenction = _connection.GetConnection())
+                {
+                    using (var cmd = new MySqlCommand(query, conenction))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                data.Add(new Department() {
+                                    Id = Convert.ToInt32(reader["id"].ToString()),
+                                    DepartmentNames = reader["department_name"].ToString()
+                                });
 
+                                
+                            }
+                        }
+                    }
+                }
             }
             catch (MySqlException ex)
             {
                 log.ErrorLog(ex.Message, this);
                 throw new ArgumentException("Error loading categories.\nPlease contact your System Administrator.");
             }
-            return _dt;
+            return data;
         }
     }
 }

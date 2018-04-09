@@ -37,10 +37,6 @@ namespace FAS
             this._user_id = user_id;
 
         }
-        public frm_fas()
-        {
-            InitializeComponent();
-        }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {

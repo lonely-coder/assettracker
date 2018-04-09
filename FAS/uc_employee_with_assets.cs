@@ -11,7 +11,6 @@ namespace FAS
 {
     public partial class uc_employee_with_assets : UserControl
     {
-        Asset asset = new Asset();
         Position position = new Position();
         Logs log = new Logs();
 

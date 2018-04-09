@@ -20,19 +20,19 @@ namespace FAS
         {
             Departments department = new Departments();
 
-            DataTable _dt = department.LoadDepartments();
+            var _dt = department.DepartmentList();
 
-            DataRow row = _dt.NewRow();
-            row["department_name"] = "Select Department";
-            row["id"] = 0;
+            ////DataRow row = _dt.NewRow();
+            //row["department_name"] = "Select Department";
+            //row["id"] = 0;
 
-            _dt.Rows.InsertAt(row, 0);
+            //_dt.Rows.InsertAt(row, 0);
 
-            metroComboBox1.DisplayMember = _dt.Columns[1].ToString();
-            metroComboBox1.ValueMember = _dt.Columns[0].ToString();
-            metroComboBox1.DataSource = _dt;
+            //metroComboBox1.DisplayMember = _dt.Columns[1].ToString();
+            //metroComboBox1.ValueMember = _dt.Columns[0].ToString();
+            //metroComboBox1.DataSource = _dt;
 
-            metroComboBox1.SelectedIndex = 0;
+            //metroComboBox1.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)

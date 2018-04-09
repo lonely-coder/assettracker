@@ -76,22 +76,15 @@ namespace FAS
         {
             try
             {
-                
-                DataTable dt = departments.LoadDepartments();
+                Departments departments = new Departments();
 
-                cb_department.DisplayMember = dt.Columns[1].ToString();
-
-                cb_department.ValueMember = dt.Columns[0].ToString();
-
-                cb_department.DataSource = dt;
-
-                DataRow dr = dt.NewRow();
-
-                dr["department_name"] = "Select a Department";
-                dr["id"] = 0;
-
-                dt.Rows.InsertAt(dr, 0);
-                cb_department.SelectedIndex = 0;
+                var list = departments.DepartmentList();
+                var source = new BindingSource();
+                list.Insert(0, new Department() { DepartmentNames = "-Select-" });
+                source.DataSource = list;
+                cb_department.ValueMember = "Id";
+                cb_department.DisplayMember = "DepartmentNames";
+                cb_department.DataSource = source;
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
