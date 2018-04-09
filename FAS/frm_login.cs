@@ -41,11 +41,6 @@ namespace FAS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-
-            Logs logs = new Logs();
-            //logs.IP = user.myIP;
-            
-
             try
             {
                 Connection connection = new Connection();

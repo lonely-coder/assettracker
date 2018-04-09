@@ -11,7 +11,8 @@ namespace FAS
         Items _items;
         Receipt _receipt;
         List<Serial> _serial_list;
-
+        ItemRepository itemRepository;
+        ReceiptRepository receiptRepository;
         int _item_id = 0 ;
         int _receipt_id = 0;
         
@@ -30,6 +31,26 @@ namespace FAS
             }
             
         }
+        private void CreateItemDetails() {
+            itemRepository = new ItemRepository(_items);
+            switch (itemRepository.itemExist())
+            {
+                case true:
+                    itemRepository.UpdateItem();
+                    break;
+                case false:
+                    itemRepository.InsertItem();
+                    break;
+                default:
+                    //
+                    break;
+            }
+        }
+        private void CreateReceipt(int _item_id) {
+            receiptRepository = new ReceiptRepository(_receipt);
+
+            receiptRepository.InsertReceipt(_item_id);
+        }
         public void CreateItem() {
             MySqlTransaction transaction=null;
             try {
@@ -37,22 +58,15 @@ namespace FAS
                 {
                     using (transaction = connection.BeginTransaction())
                     {
-                        var itemRepository = new ItemRepository(_items);
-                        if (itemRepository.itemExist())
-                        {
-                            itemRepository.UpdateItem();
-                        }
-                        else {
-                            itemRepository.InsertItem();
-                        }
-                        _item_id = itemRepository.SetItemId();
+                        CreateItemDetails();
+                          
+                        _item_id = itemRepository.GetIdOfLastInsertedItem();
 
-                        var receiptRepository = new ReceiptRepository(_receipt);
-                        receiptRepository.InsertReceipt(_item_id);
+                        CreateReceipt(_item_id);
 
                         _receipt_id = receiptRepository.LastInsertId();
                         
-                        if (itemRepository.hasSerialNumber() && checkedQuantityAndProvidedSerialsIfEqual()) {
+                        if ((_items.HasSerial == 1) && checkedQuantityAndProvidedSerialsIfEqual()) {
                             SerialRepository serialRepository = new SerialRepository(_serial_list);
                             serialRepository.InsertSerial(_item_id,_receipt_id);
                         }

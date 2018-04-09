@@ -88,10 +88,6 @@ namespace FAS
         {
             get;set;
         }
-        public int OnLoan {
-            get;
-            set;
-        }
         public int HasSerial {
             get { return this._has_serial; }
             set {  this._has_serial = value; }

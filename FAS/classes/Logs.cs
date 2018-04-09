@@ -6,7 +6,7 @@ using System.Net;
 using MySql.Data.MySqlClient;
 namespace FAS
 {
-    class Logs:DB
+    class Logs
     {
         private int _id;
         private int _log_type;
@@ -58,24 +58,24 @@ namespace FAS
         }
 
         public void ErrorLog(string ErrorLog,object obj) {
-            string _error_log = ErrorLog;
-            object _obj = obj;
-            this._host_name = Dns.GetHostName();
-            this._IP = Dns.GetHostEntry(this._host_name).AddressList[0].ToString();
-            this.Query = $@"INSERT INTO logs
-                        values(null,
-                        2,
-                        @log_description,
-                        @ip_address,
-                        now())";
+            //string _error_log = ErrorLog;
+            //object _obj = obj;
+            //this._host_name = Dns.GetHostName();
+            //this._IP = Dns.GetHostEntry(this._host_name).AddressList[0].ToString();
+            //this.Query = $@"INSERT INTO logs
+            //            values(null,
+            //            2,
+            //            @log_description,
+            //            @ip_address,
+            //            now())";
             
-                if (this.OpenConnection() == true) {
-                    cmd = new MySqlCommand(this.Query, this.connection);
-                    cmd.Parameters.AddWithValue("@log_description", _error_log +" from "+_obj);
-                    cmd.Parameters.AddWithValue("@ip_address", this._IP);
-                    cmd.ExecuteNonQuery();
-                    this.CloseConnection();
-            }
+            //    if (this.OpenConnection() == true) {
+            //        cmd = new MySqlCommand(this.Query, this.connection);
+            //        cmd.Parameters.AddWithValue("@log_description", _error_log +" from "+_obj);
+            //        cmd.Parameters.AddWithValue("@ip_address", this._IP);
+            //        cmd.ExecuteNonQuery();
+            //        this.CloseConnection();
+            //}
             
         }
     }

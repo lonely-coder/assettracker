@@ -310,8 +310,6 @@
             this.MinimizeBox = false;
             this.Name = "frm_add_vendors";
             this.Text = "Add Vendor";
-            this.Load += new System.EventHandler(this.frm_addVendors_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frm_addVendors_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

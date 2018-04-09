@@ -19,34 +19,26 @@ namespace FAS
         
         private void getVendors() {
 
-            Vendors vendorObj = new Vendors();
-            var _dt = vendorObj.SelectAllVendords();
+            VendorRepository vendorRepository = new VendorRepository();
+            var list = vendorRepository.VendorList();
+            list.Insert(0, new Vendors() { VendorName = "-Select-" });
+            var source = new BindingSource();
+            source.DataSource = list;
 
-            DataRow row = _dt.NewRow();
-
-            row[0] = 0;
-            row[1] = "Select a Vendor";
-
-            _dt.Rows.InsertAt(row, 0);
-
-            cb_vendors.DisplayMember = _dt.Columns[1].ToString();
-            cb_vendors.ValueMember = _dt.Columns[0].ToString();
-            cb_vendors.DataSource = _dt;
+            cb_vendors.DisplayMember = "VendorName";
+            cb_vendors.ValueMember = "Id";
+            cb_vendors.DataSource = source;
             cb_vendors.SelectedIndex = 0;
         }
         private void getCategory() {
-            Category categoryObj = new Category();
-            var _dt = categoryObj.Categories();
-
-            DataRow row = _dt.NewRow();
-
-            row[0] = 0;
-            row[1] = "Select Category";
-            _dt.Rows.InsertAt(row, 0);
-
-            cb_category.DisplayMember = _dt.Columns[1].ToString();
-            cb_category.ValueMember = _dt.Columns[0].ToString();
-            cb_category.DataSource = _dt;
+            CategoryRepository categoryRepository = new CategoryRepository();
+            var list = categoryRepository.CategoryList();
+            list.Insert(0,new Category() { CategoryName = "-Select-"});
+            var source = new BindingSource();
+            source.DataSource = list;
+            cb_category.DisplayMember = "CategoryName";
+            cb_category.ValueMember = "Id";
+            cb_category.DataSource = source;
 
             cb_category.SelectedIndex = 0;
         }
@@ -283,21 +275,15 @@ namespace FAS
         }
         private void cb_category_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            SubCategory subCatobj = new SubCategory();
-            subCatobj.CategoryId = int.Parse(cb_category.SelectedValue.ToString());
-            dt = subCatobj.SubCategories();
+            SubCategoryRepository subCategoryRepository = new SubCategoryRepository();
+            var list = subCategoryRepository.SubCategoryList(Convert.ToInt32(cb_category.SelectedValue.ToString()));
+            list.Insert(0, new SubCategory() { SubCategoryName = "-Select-" });
+            var source = new BindingSource();
+            source.DataSource = list;
 
-            DataRow row = dt.NewRow();
-
-            row[0] = 0;
-            row[2] = "Select Sub Category";
-
-            dt.Rows.InsertAt(row, 0);
-
-            cb_sub_category.ValueMember = dt.Columns[0].ToString();
-            cb_sub_category.DisplayMember = dt.Columns[2].ToString();
-            cb_sub_category.DataSource = dt;
+            cb_sub_category.ValueMember = "Id";
+            cb_sub_category.DisplayMember = "SubCategoryName";
+            cb_sub_category.DataSource = source;
 
             cb_sub_category.SelectedIndex = 0;
         }

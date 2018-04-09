@@ -151,12 +151,14 @@
     <Compile Include="classes\AssetsModelDataValidator.cs" />
     <Compile Include="classes\AssetsModel.cs" />
     <Compile Include="classes\AssetsRepository.cs" />
+    <Compile Include="classes\CategoryRepository.cs" />
     <Compile Include="classes\Connection.cs" />
     <Compile Include="classes\Department.cs" />
-    <Compile Include="classes\ItemAvailabilityChecker.cs" />
-    <Compile Include="classes\ItemDescriptionCreator.cs" />
     <Compile Include="classes\ItemInventoryViewer.cs" />
     <Compile Include="classes\ItemModel.cs" />
+    <Compile Include="classes\PositionRepository.cs" />
+    <Compile Include="classes\SubCategoryRepository.cs" />
+    <Compile Include="classes\VendorRepository.cs" />
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -255,7 +257,6 @@
     <Compile Include="frm_test.Designer.cs">
       <DependentUpon>frm_test.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\IDatabase.cs" />
     <Compile Include="classes\ItemCreator.cs" />
     <Compile Include="classes\ItemRepository.cs" />
     <Compile Include="ItemList.cs">
@@ -268,7 +269,6 @@
     <Compile Include="classes\Logs.cs" />
     <Compile Include="classes\Receipt.cs" />
     <Compile Include="classes\ReceiptRepository.cs" />
-    <Compile Include="classes\Remarks.cs" />
     <Compile Include="classes\Serial.cs" />
     <Compile Include="classes\SerialRepository.cs" />
     <Compile Include="classes\ItemSerialProvider.cs" />
@@ -304,12 +304,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="classes\Category.cs" />
-    <Compile Include="frm_receipt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_receipt.Designer.cs">
-      <DependentUpon>frm_receipt.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_item_detail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,7 +317,7 @@
       <DependentUpon>frm_department_picker.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\Position.cs" />
-    <Compile Include="classes\Departments.cs" />
+    <Compile Include="classes\DepartmentsRepository.cs" />
     <Compile Include="classes\SubCategory.cs" />
     <Compile Include="uc_employee_asset.cs">
       <SubType>UserControl</SubType>
@@ -363,7 +357,6 @@
       <DependentUpon>frm_fas.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\Users.cs" />
-    <Compile Include="classes\Employees.cs" />
     <Compile Include="frm_add_vendors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,14 +369,12 @@
     <Compile Include="frm_employee_info.Designer.cs">
       <DependentUpon>frm_employee_info.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\DB.cs" />
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CrystalReport1.rpt">
@@ -438,9 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_print_per_department.resx">
       <DependentUpon>frm_print_per_department.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_receipt.resx">
-      <DependentUpon>frm_receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_department_picker.resx">
       <DependentUpon>frm_department_picker.cs</DependentUpon>

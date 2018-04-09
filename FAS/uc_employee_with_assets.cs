@@ -11,14 +11,9 @@ namespace FAS
 {
     public partial class uc_employee_with_assets : UserControl
     {
-        Position position = new Position();
-        Logs log = new Logs();
-
         frm_fas _Main;
         int _user_id;
-        int _privilege_id;
-        DataTable _assetsDT = new DataTable();
-        DataTable _posDt = new DataTable();
+     
         public uc_employee_with_assets()
         {
             InitializeComponent();

@@ -6,14 +6,10 @@ using System.Data;
 using MySql.Data.MySqlClient;
 namespace FAS
 {
-    class Category :DB
+    public class Category 
     {
-
         private int _id;
         private string _category;
-        private DataTable _dt;
-
-        Logs log = new Logs();
         public int ID {
             get {
                 return this._id;
@@ -44,20 +40,6 @@ namespace FAS
                     throw new ArgumentException("Invalid Category");
                 }
             }
-        }
-        public DataTable Categories() {
-
-            try {
-                this.Query = "SELECT * from asset_category";
-                this._dt = new DataTable();
-                this._dt = this.Select();
-
-            }
-            catch (MySqlException ex) {
-                log.ErrorLog(ex.Message, this);
-                throw new ArgumentException("Error loading categories.\nPlease contact your System Administrator.");
-            }
-            return _dt;
         }
     }
 }

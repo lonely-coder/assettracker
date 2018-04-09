@@ -26,14 +26,11 @@ namespace FAS
         public bool itemExist() {
             return _items.Id > 0;
         }
-        public int SetItemId() {
+        public int GetIdOfLastInsertedItem() {
             if (_items.Id == 0) {
                 _items.Id = LastInsertId();
             }
             return _items.Id;
-        }
-        public bool hasSerialNumber() {
-            return _items.HasSerial == 1;
         }
         public Items GetItemById(int item_id) {
             Items items = new Items();

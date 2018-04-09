@@ -62,7 +62,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Employees Employees1;
+        
         private Employeerpt Employeerpt1;
         private Employeerpt Employeerpt2;
     }

@@ -45,7 +45,6 @@ namespace FAS
                 dg_item_grid.Columns["CategoryId"].Visible = false;
                 dg_item_grid.Columns["SubCategoryId"].Visible = false;
                 dg_item_grid.Columns["HasSerial"].Visible = false;
-                dg_item_grid.Columns["OnLoan"].Visible = false;
                 DataGridViewButtonColumn btn_preview = new DataGridViewButtonColumn();
                 btn_preview.HeaderText = "#";
                 btn_preview.Text = "Details";

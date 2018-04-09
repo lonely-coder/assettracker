@@ -12,8 +12,6 @@ namespace FAS
     public partial class frm_add_user : MetroFramework.Forms.MetroForm
     {
         public int _id;
-
-        Logs log;
         Users priv;
         public frm_add_user()
         {

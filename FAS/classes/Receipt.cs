@@ -17,7 +17,7 @@ namespace FAS
         private DateTime _date_purchased;
         private DateTime _warranty_date;
         private bool _success = false;
-        Logs log = new Logs();
+        
         public int Id {
             get { return this._id; }
             set {
@@ -135,81 +135,6 @@ namespace FAS
         public override string ToString()
         {
             return Price.ToString();
-        }
-
-
-        public bool ItemReceipt()
-        {
-        //    try
-        //    {
-        //        this.Query = @"INSERT into item_receipt(
-        //                    `item_id`,
-        //                    `vendor_id`,
-        //                    `official_receipt`,
-        //                    `price`,
-        //                    `quantity`,
-        //                    `date_purchased`,
-        //                    `warranty_date`,
-        //                    `date_created`) VALUES (
-        //                    @itemId,
-        //                    @vendor,
-        //                    @receipt,
-        //                    @price,
-        //                    @quantity,
-        //                    @datePurchased,
-        //                    @warranty,
-        //                    now());";
-        //        if (this.OpenConnection() == true)
-        //        {
-        //            cmd = new MySqlCommand(this.Query, this.connection);
-        //            cmd.Parameters.AddWithValue("@itemId", this._item_id);
-        //            cmd.Parameters.AddWithValue("@vendor", this._vendor_id);
-        //            cmd.Parameters.AddWithValue("@receipt", this._official_receipt);
-        //            cmd.Parameters.AddWithValue("@price", this._price);
-        //            cmd.Parameters.AddWithValue("@quantity", this._quantity);
-        //            cmd.Parameters.AddWithValue("@datePurchased", this._date_purchased);
-        //            cmd.Parameters.AddWithValue("@warranty", this._warranty_date);
-        //            this._success = cmd.ExecuteNonQuery() > 0;
-        //            this._last_inserted_id = cmd.LastInsertedId;
-        //            this.CloseConnection();
-        //        }
-        //    }
-        //    catch (Exception ex) {
-        //        log.ErrorLog(ex.Message, this);
-        //        throw new ArgumentException(ex.Message);
-        //    }
-            return this._success;
-        }
-        public void UpdateReceipt() {
-        //    try {
-        //        this.Query = $@"UPDATE item_receipt set vendor_id = @vendor,
-        //            official_receipt = @receipt,
-        //            price = @price,
-        //            quantity = @quantity,
-        //            date_purchased = @datePurchased,
-        //            warranty_date = @warranty where id = @id";
-        //        if (this.OpenConnection() == true)
-        //        {
-        //            cmd = new MySqlCommand(this.Query, this.connection);
-        //            cmd.Parameters.AddWithValue("@itemId", this._item_id);
-        //            cmd.Parameters.AddWithValue("@vendor", this._vendor_id);
-        //            cmd.Parameters.AddWithValue("@receipt", this._official_receipt);
-        //            cmd.Parameters.AddWithValue("@price", this._price);
-        //            cmd.Parameters.AddWithValue("@quantity", this._quantity);
-        //            cmd.Parameters.AddWithValue("@datePurchased", this._date_purchased);
-        //            cmd.Parameters.AddWithValue("@warranty", this._warranty_date);
-        //            cmd.Parameters.AddWithValue("@id", this._id);
-        //            cmd.ExecuteNonQuery();
-
-        //            this._last_inserted_id = cmd.LastInsertedId;
-        //            this.CloseConnection();
-        //        }
-        //    }
-        //    catch (MySqlException ex) {
-        //        log.ErrorLog(ex.Message,this);
-        //        throw new ArgumentException("Error updating receipt.\nPlease Contact your System Administrator");
-        //    }
-            
         }
 
     }

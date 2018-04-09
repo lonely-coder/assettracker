@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace FAS
 {
-    class EmployeeRepository:IDatabase
+    class EmployeeRepository
     {
         Connection _connection;
         Employee _employee;

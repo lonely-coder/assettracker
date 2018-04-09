@@ -8,7 +8,6 @@ namespace FAS
     public partial class uc_item_inventory : UserControl
     {
         uc_item_list _item_list;
-        Logs log;
         
         int _item_id;
         int _user_id;
@@ -31,7 +30,6 @@ namespace FAS
             ItemRepository itemRepository = new ItemRepository();
             Items items = itemRepository.GetItemById(_item_id);
             lbl_model.Text = string.Format("{0}",items.Model); 
-            
 
         }
         public void DisplayItemInventory()
@@ -77,20 +75,13 @@ namespace FAS
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                frm_receipt _receipt = new frm_receipt(this, id,this._user_id);
-                _receipt.ShowDialog();
+                //frm_receipt _receipt = new frm_receipt(this, id,this._user_id);
+                //_receipt.ShowDialog();
             }
             }
-
-        private void btn_return_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            this._item_list.ViewControls();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //frm_preview_all_items _print = new frm_preview_all_items(this._id);
             frm_item_per_model _print = new frm_item_per_model(this._item_id);
             _print.ShowDialog();
         }

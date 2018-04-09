@@ -144,22 +144,17 @@ namespace FAS
         {
             try
             {
+                PositionRepository positionRepository = new PositionRepository();
+                var list = positionRepository.PositionList(Convert.ToInt32(cb_department.SelectedValue.ToString()));
+                list.Insert(0, new Position() { PositionName = "-Select-" });
+                var source = new BindingSource();
+                source.DataSource = list;
 
-                position.DepartmentId = int.Parse(cb_department.SelectedValue.ToString());
-                DataTable dt = position.LoadPosition();
+                cb_position.DisplayMember = "PositionName";
 
-                cb_position.DisplayMember = dt.Columns[2].ToString();
+                cb_position.ValueMember = "Id";
 
-                cb_position.ValueMember = dt.Columns[0].ToString();
-
-                cb_position.DataSource = dt;
-
-                DataRow positiondr = dt.NewRow();
-
-                positiondr["position_name"] = "Select a Position";
-                positiondr["id"] = 0;
-
-                dt.Rows.InsertAt(positiondr, 0);
+                cb_position.DataSource = source;
 
                 cb_position.SelectedIndex = 0;
             }

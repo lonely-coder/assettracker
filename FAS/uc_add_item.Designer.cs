@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_cancel = new System.Windows.Forms.Button();
@@ -203,7 +203,7 @@
             this.lbl_error_price.AutoSize = true;
             this.lbl_error_price.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_error_price.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error_price.Location = new System.Drawing.Point(181, 590);
+            this.lbl_error_price.Location = new System.Drawing.Point(181, 530);
             this.lbl_error_price.Name = "lbl_error_price";
             this.lbl_error_price.Size = new System.Drawing.Size(106, 20);
             this.lbl_error_price.TabIndex = 129;
@@ -215,7 +215,7 @@
             this.lbl_warranty_error.AutoSize = true;
             this.lbl_warranty_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_warranty_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_warranty_error.Location = new System.Drawing.Point(252, 533);
+            this.lbl_warranty_error.Location = new System.Drawing.Point(252, 473);
             this.lbl_warranty_error.Name = "lbl_warranty_error";
             this.lbl_warranty_error.Size = new System.Drawing.Size(186, 20);
             this.lbl_warranty_error.TabIndex = 128;
@@ -227,7 +227,7 @@
             this.lbl_dop_error.AutoSize = true;
             this.lbl_dop_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dop_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_dop_error.Location = new System.Drawing.Point(259, 476);
+            this.lbl_dop_error.Location = new System.Drawing.Point(259, 416);
             this.lbl_dop_error.Name = "lbl_dop_error";
             this.lbl_dop_error.Size = new System.Drawing.Size(195, 20);
             this.lbl_dop_error.TabIndex = 127;
@@ -239,7 +239,7 @@
             this.lbl_vendor_error.AutoSize = true;
             this.lbl_vendor_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_vendor_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_vendor_error.Location = new System.Drawing.Point(215, 355);
+            this.lbl_vendor_error.Location = new System.Drawing.Point(215, 295);
             this.lbl_vendor_error.Name = "lbl_vendor_error";
             this.lbl_vendor_error.Size = new System.Drawing.Size(182, 20);
             this.lbl_vendor_error.TabIndex = 126;
@@ -251,7 +251,7 @@
             this.lbl_receipt_error.AutoSize = true;
             this.lbl_receipt_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_receipt_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_receipt_error.Location = new System.Drawing.Point(215, 415);
+            this.lbl_receipt_error.Location = new System.Drawing.Point(215, 355);
             this.lbl_receipt_error.Name = "lbl_receipt_error";
             this.lbl_receipt_error.Size = new System.Drawing.Size(125, 20);
             this.lbl_receipt_error.TabIndex = 125;
@@ -311,7 +311,7 @@
             this.lbl_error_quantity.AutoSize = true;
             this.lbl_error_quantity.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_error_quantity.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error_quantity.Location = new System.Drawing.Point(198, 272);
+            this.lbl_error_quantity.Location = new System.Drawing.Point(198, 591);
             this.lbl_error_quantity.Name = "lbl_error_quantity";
             this.lbl_error_quantity.Size = new System.Drawing.Size(130, 20);
             this.lbl_error_quantity.TabIndex = 120;
@@ -364,7 +364,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(121, 590);
+            this.label14.Location = new System.Drawing.Point(121, 530);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 20);
             this.label14.TabIndex = 112;
@@ -375,7 +375,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(121, 272);
+            this.label13.Location = new System.Drawing.Point(121, 591);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(71, 20);
             this.label13.TabIndex = 111;
@@ -430,7 +430,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(119, 533);
+            this.label8.Location = new System.Drawing.Point(119, 473);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 20);
             this.label8.TabIndex = 106;
@@ -441,7 +441,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(119, 476);
+            this.label7.Location = new System.Drawing.Point(119, 416);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 20);
             this.label7.TabIndex = 105;
@@ -452,7 +452,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(119, 415);
+            this.label6.Location = new System.Drawing.Point(119, 355);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 104;
@@ -463,7 +463,7 @@
             this.lbl_vendor.AutoSize = true;
             this.lbl_vendor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_vendor.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_vendor.Location = new System.Drawing.Point(119, 355);
+            this.lbl_vendor.Location = new System.Drawing.Point(119, 295);
             this.lbl_vendor.Name = "lbl_vendor";
             this.lbl_vendor.Size = new System.Drawing.Size(64, 20);
             this.lbl_vendor.TabIndex = 103;
@@ -472,7 +472,7 @@
             // dtpicker_warrantyperoiod
             // 
             this.dtpicker_warrantyperoiod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpicker_warrantyperoiod.Location = new System.Drawing.Point(125, 556);
+            this.dtpicker_warrantyperoiod.Location = new System.Drawing.Point(125, 496);
             this.dtpicker_warrantyperoiod.Name = "dtpicker_warrantyperoiod";
             this.dtpicker_warrantyperoiod.Size = new System.Drawing.Size(323, 26);
             this.dtpicker_warrantyperoiod.TabIndex = 9;
@@ -480,7 +480,7 @@
             // dtpicker_dateofpurchase
             // 
             this.dtpicker_dateofpurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpicker_dateofpurchase.Location = new System.Drawing.Point(123, 499);
+            this.dtpicker_dateofpurchase.Location = new System.Drawing.Point(123, 439);
             this.dtpicker_dateofpurchase.Name = "dtpicker_dateofpurchase";
             this.dtpicker_dateofpurchase.Size = new System.Drawing.Size(323, 26);
             this.dtpicker_dateofpurchase.TabIndex = 8;
@@ -515,7 +515,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(103, 336);
+            this.label1.Location = new System.Drawing.Point(103, 276);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 19);
             this.label1.TabIndex = 66;
@@ -525,8 +525,8 @@
             // 
             this.dg_serialnumbers.AllowUserToAddRows = false;
             this.dg_serialnumbers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dg_serialnumbers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dg_serialnumbers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_serialnumbers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_serialnumbers.BackgroundColor = System.Drawing.Color.White;
             this.dg_serialnumbers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -535,25 +535,25 @@
             this.dg_serialnumbers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.serial,
             this.Action});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_serialnumbers.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_serialnumbers.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_serialnumbers.Enabled = false;
             this.dg_serialnumbers.Location = new System.Drawing.Point(125, 768);
             this.dg_serialnumbers.Name = "dg_serialnumbers";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_serialnumbers.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_serialnumbers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_serialnumbers.RowHeadersVisible = false;
             this.dg_serialnumbers.RowTemplate.Height = 30;
             this.dg_serialnumbers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -632,7 +632,7 @@
             // numericUpDown_quantity
             // 
             this.numericUpDown_quantity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_quantity.Location = new System.Drawing.Point(123, 295);
+            this.numericUpDown_quantity.Location = new System.Drawing.Point(123, 614);
             this.numericUpDown_quantity.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -660,7 +660,7 @@
             this.txt_price.CustomButton.Visible = false;
             this.txt_price.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txt_price.Lines = new string[0];
-            this.txt_price.Location = new System.Drawing.Point(123, 613);
+            this.txt_price.Location = new System.Drawing.Point(123, 553);
             this.txt_price.MaxLength = 15;
             this.txt_price.Name = "txt_price";
             this.txt_price.PasswordChar = '\0';
@@ -761,7 +761,7 @@
             this.txt_official_receipt.CustomButton.Visible = false;
             this.txt_official_receipt.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txt_official_receipt.Lines = new string[0];
-            this.txt_official_receipt.Location = new System.Drawing.Point(123, 438);
+            this.txt_official_receipt.Location = new System.Drawing.Point(123, 378);
             this.txt_official_receipt.MaxLength = 50;
             this.txt_official_receipt.Name = "txt_official_receipt";
             this.txt_official_receipt.PasswordChar = '\0';
@@ -781,7 +781,7 @@
             // 
             this.cb_vendors.FormattingEnabled = true;
             this.cb_vendors.ItemHeight = 23;
-            this.cb_vendors.Location = new System.Drawing.Point(125, 378);
+            this.cb_vendors.Location = new System.Drawing.Point(125, 318);
             this.cb_vendors.Name = "cb_vendors";
             this.cb_vendors.Size = new System.Drawing.Size(323, 29);
             this.cb_vendors.Style = MetroFramework.MetroColorStyle.Teal;

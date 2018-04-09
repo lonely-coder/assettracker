@@ -113,7 +113,6 @@
             this.txt_filter.WaterMark = "Employee I.D or Name . . . .";
             this.txt_filter.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_filter.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter.TextChanged += new System.EventHandler(this.txt_filter_TextChanged);
             // 
             // button2
             // 
