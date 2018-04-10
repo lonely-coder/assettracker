@@ -290,6 +290,18 @@
     <Compile Include="uc_add_item.Designer.cs">
       <DependentUpon>uc_add_item.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_add_item_details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_add_item_details.Designer.cs">
+      <DependentUpon>uc_add_item_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_item_receipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_item_receipt.Designer.cs">
+      <DependentUpon>uc_item_receipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_vendor_list.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -475,6 +487,9 @@
     <EmbeddedResource Include="uc_add_item.resx">
       <DependentUpon>uc_add_item.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uc_add_item_details.resx">
+      <DependentUpon>uc_add_item_details.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uc_employee_asset.resx">
       <DependentUpon>uc_employee_asset.cs</DependentUpon>
     </EmbeddedResource>
@@ -489,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc_item_inventory.resx">
       <DependentUpon>uc_item_inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_item_receipt.resx">
+      <DependentUpon>uc_item_receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_vendor_list.resx">
       <DependentUpon>uc_vendor_list.cs</DependentUpon>

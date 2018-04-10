@@ -101,5 +101,13 @@ namespace FAS
             frm_select_dept_scrapt _scrap = new frm_select_dept_scrapt();
             _scrap.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            uc_add_item_details _add_item = new uc_add_item_details(_main_form);
+            _main_form.panel_body.Controls.Clear();
+            _main_form.panel_body.Controls.Add(_add_item);
+            _main_form.lbl_current_tab.Text = "Add New Item";
+        }
     }
 }
