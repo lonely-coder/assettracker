@@ -1,50 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
-using MySql.Data.MySqlClient;
 namespace FAS
 {
-    public class Receipt 
+    public class Receipt : IReceipt
     {
         private int _id;
         private int _item_id;
         private int _vendor_id;
         private int _quantity;
-        private double _price = 0.00;
+        private decimal _price = 0.00m;
         private string _official_receipt;
         private DateTime _date_purchased;
         private DateTime _warranty_date;
-        private bool _success = false;
         
         public int Id {
-            get { return this._id; }
-            set {
-                if (value > 0)
-                {
-                    this._id = value;
-                }
-                else {
-                    throw new ArgumentException("Invalid Receipt Id");
-                }
+            get;set;
              
-            }
         }
         public int ItemId
         {
             get { return this._item_id; }
             set
             {
-                if (value > 0)
-                {
-                    this._item_id = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Invalid Item Id");
-                }
-
+                this._item_id = value;
             }
         }
         public int VendorId {
@@ -74,7 +51,7 @@ namespace FAS
                 }
             }
         }
-        public double Price
+        public decimal Price
         {
             get {
                 return _price;

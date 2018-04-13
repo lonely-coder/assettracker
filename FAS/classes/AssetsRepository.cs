@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using MySql.Data.MySqlClient;
 using System.Data;
 
@@ -20,6 +19,10 @@ namespace FAS
 
             string query = $@"SELECT 
                 assets.id as `Asset Id`,
+                employees.id as `EmployeeId`,
+                employees.first_name as `First Name`,
+                employees.last_name as `Last Name`,
+                employees.employee_id,
                 IF(assets.property_tag= '','n/a',assets.property_tag) as `Property Tag`,
                 items.id as `Item Id`,
                 items.model as `Model`,
@@ -28,10 +31,12 @@ namespace FAS
                 assets.asset_price as `Amount`    ,
                 DATE(assets.date_acquired) as `Date Acquired`,
                 assets.quantity as `Quantity`
-                FROM item_serials RIGHT JOIN(
+                FROM employees INNER JOIN(
+                item_serials RIGHT JOIN(
                 items LEFT JOIN assets 
                 ON items.id = assets.item_id)
-                ON item_serials.id = assets.serial_id
+                ON item_serials.id = assets.serial_id)
+                ON employees.id = assets.employee_id
                 WHERE assets.employee_id = @id
                 AND assets.remarks IS NULL";
 
@@ -49,6 +54,12 @@ namespace FAS
                                 {
                                     Id = int.Parse(reader["Asset Id"].ToString()),
                                     PropertyTag = reader["Property Tag"].ToString(),
+                                    EmployeeId = Convert.ToInt32(reader["EmployeeId"].ToString()),
+                                    Employee = new Employee() {
+                                        ID = Convert.ToInt32(reader["EmployeeId"].ToString()),
+                                        FirstName = reader["First Name"].ToString(),
+                                        LastName =reader["Last Name"].ToString()
+                                    },
                                     Items = new Items()
                                     {
                                         Id = int.Parse(reader["Item Id"].ToString()),
@@ -59,7 +70,7 @@ namespace FAS
                                         Id = int.Parse(reader["Item Serial Id"].ToString()),
                                         SerialNumber = reader["Serial Number"].ToString()
                                     },
-                                    Price = Convert.ToDouble(reader["Amount"].ToString()),
+                                    Price = Convert.ToDecimal(reader["Amount"].ToString()),
                                     Quantity = int.Parse(reader["Quantity"].ToString()),
                                     DateAcquired = Convert.ToDateTime(reader["Date Acquired"].ToString())
                                 }
@@ -165,6 +176,7 @@ namespace FAS
         }
         public DataTable SelectAssetsPerEmployee(int employee_id)
         {
+
             var data = new DataTable();
             try
             {
@@ -178,7 +190,7 @@ namespace FAS
                 positions.position_name as `Position`,
                 items.model as `Model`,
                 IFNULL(item_serials.serial_number,'N/A') as `Serial Number`,
-                assets.asset_price as `Amount`                
+                assets.asset_price as `Price`                
                 FROM item_serials RIGHT JOIN(items LEFT JOIN(positions INNER JOIN(
                 departments INNER JOIN(
                 employees RIGHT JOIN assets 
@@ -195,10 +207,8 @@ namespace FAS
                     using (var cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@id", employee_id);
-                        using (var reader = cmd.ExecuteReader()) {
-                            while (reader.Read()) {
-                                data.Load(reader);
-                            }
+                        using (MySqlDataReader reader = cmd.ExecuteReader()) {
+                            data.Load(reader);
                         }
                     }
                 }

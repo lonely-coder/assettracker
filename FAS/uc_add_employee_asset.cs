@@ -147,7 +147,7 @@ namespace FAS
                     Id = _item_serial
                 },
                 Quantity = int.Parse(numberic_up_down_quantity.Value.ToString()),
-                Price = double.Parse(cb_price_list.SelectedValue.ToString()),
+                Price = Convert.ToDecimal(cb_price_list.SelectedValue.ToString()),
                 DateAcquired = Convert.ToDateTime(dt_picker_date_acquired.Value)
             };
             return assetsModel;

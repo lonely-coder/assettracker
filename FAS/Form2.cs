@@ -18,9 +18,9 @@ namespace FAS
 
         private void frm_select_dept_scrapt_Load(object sender, EventArgs e)
         {
-            Departments department = new Departments();
+            DepartmentsRepository departmentsRepositor = new DepartmentsRepository();
 
-            var _dt = department.DepartmentList();
+            //var _dt = department.DepartmentList();
 
             ////DataRow row = _dt.NewRow();
             //row["department_name"] = "Select Department";

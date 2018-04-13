@@ -12,7 +12,7 @@ namespace FAS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Departments department = new Departments();
+            DepartmentsRepository department = new DepartmentsRepository();
 
             var list = department.DepartmentList();
             var source = new BindingSource();

@@ -30,12 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbl_error_price = new System.Windows.Forms.Label();
-            this.lbl_warranty_error = new System.Windows.Forms.Label();
-            this.lbl_dop_error = new System.Windows.Forms.Label();
-            this.lbl_vendor_error = new System.Windows.Forms.Label();
-            this.lbl_receipt_error = new System.Windows.Forms.Label();
-            this.lbl_error_quantity = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,78 +66,6 @@
             this.label2.Size = new System.Drawing.Size(57, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
-            // 
-            // lbl_error_price
-            // 
-            this.lbl_error_price.AutoSize = true;
-            this.lbl_error_price.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_error_price.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error_price.Location = new System.Drawing.Point(216, 292);
-            this.lbl_error_price.Name = "lbl_error_price";
-            this.lbl_error_price.Size = new System.Drawing.Size(106, 20);
-            this.lbl_error_price.TabIndex = 148;
-            this.lbl_error_price.Text = "-Invalid price";
-            this.lbl_error_price.Visible = false;
-            // 
-            // lbl_warranty_error
-            // 
-            this.lbl_warranty_error.AutoSize = true;
-            this.lbl_warranty_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_warranty_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_warranty_error.Location = new System.Drawing.Point(287, 235);
-            this.lbl_warranty_error.Name = "lbl_warranty_error";
-            this.lbl_warranty_error.Size = new System.Drawing.Size(186, 20);
-            this.lbl_warranty_error.TabIndex = 147;
-            this.lbl_warranty_error.Text = "-Invalid warranty period";
-            this.lbl_warranty_error.Visible = false;
-            // 
-            // lbl_dop_error
-            // 
-            this.lbl_dop_error.AutoSize = true;
-            this.lbl_dop_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dop_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_dop_error.Location = new System.Drawing.Point(294, 178);
-            this.lbl_dop_error.Name = "lbl_dop_error";
-            this.lbl_dop_error.Size = new System.Drawing.Size(195, 20);
-            this.lbl_dop_error.TabIndex = 146;
-            this.lbl_dop_error.Text = "-Invalid date of purchase";
-            this.lbl_dop_error.Visible = false;
-            // 
-            // lbl_vendor_error
-            // 
-            this.lbl_vendor_error.AutoSize = true;
-            this.lbl_vendor_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vendor_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_vendor_error.Location = new System.Drawing.Point(250, 57);
-            this.lbl_vendor_error.Name = "lbl_vendor_error";
-            this.lbl_vendor_error.Size = new System.Drawing.Size(182, 20);
-            this.lbl_vendor_error.TabIndex = 145;
-            this.lbl_vendor_error.Text = "-Please select a vendor";
-            this.lbl_vendor_error.Visible = false;
-            // 
-            // lbl_receipt_error
-            // 
-            this.lbl_receipt_error.AutoSize = true;
-            this.lbl_receipt_error.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_receipt_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_receipt_error.Location = new System.Drawing.Point(250, 117);
-            this.lbl_receipt_error.Name = "lbl_receipt_error";
-            this.lbl_receipt_error.Size = new System.Drawing.Size(125, 20);
-            this.lbl_receipt_error.TabIndex = 144;
-            this.lbl_receipt_error.Text = "-Invalid Receipt";
-            this.lbl_receipt_error.Visible = false;
-            // 
-            // lbl_error_quantity
-            // 
-            this.lbl_error_quantity.AutoSize = true;
-            this.lbl_error_quantity.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_error_quantity.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error_quantity.Location = new System.Drawing.Point(233, 353);
-            this.lbl_error_quantity.Name = "lbl_error_quantity";
-            this.lbl_error_quantity.Size = new System.Drawing.Size(130, 20);
-            this.lbl_error_quantity.TabIndex = 143;
-            this.lbl_error_quantity.Text = "-Invalid Quantity";
-            this.lbl_error_quantity.Visible = false;
             // 
             // label14
             // 
@@ -217,7 +139,7 @@
             this.dtpicker_warrantyperoiod.Location = new System.Drawing.Point(160, 258);
             this.dtpicker_warrantyperoiod.Name = "dtpicker_warrantyperoiod";
             this.dtpicker_warrantyperoiod.Size = new System.Drawing.Size(323, 26);
-            this.dtpicker_warrantyperoiod.TabIndex = 134;
+            this.dtpicker_warrantyperoiod.TabIndex = 4;
             // 
             // dtpicker_dateofpurchase
             // 
@@ -225,7 +147,7 @@
             this.dtpicker_dateofpurchase.Location = new System.Drawing.Point(158, 201);
             this.dtpicker_dateofpurchase.Name = "dtpicker_dateofpurchase";
             this.dtpicker_dateofpurchase.Size = new System.Drawing.Size(323, 26);
-            this.dtpicker_dateofpurchase.TabIndex = 133;
+            this.dtpicker_dateofpurchase.TabIndex = 3;
             // 
             // numericUpDown_quantity
             // 
@@ -238,7 +160,7 @@
             0});
             this.numericUpDown_quantity.Name = "numericUpDown_quantity";
             this.numericUpDown_quantity.Size = new System.Drawing.Size(109, 33);
-            this.numericUpDown_quantity.TabIndex = 130;
+            this.numericUpDown_quantity.TabIndex = 6;
             // 
             // txt_price
             // 
@@ -267,10 +189,13 @@
             this.txt_price.ShortcutsEnabled = true;
             this.txt_price.Size = new System.Drawing.Size(164, 30);
             this.txt_price.Style = MetroFramework.MetroColorStyle.Teal;
-            this.txt_price.TabIndex = 135;
+            this.txt_price.TabIndex = 5;
             this.txt_price.UseSelectable = true;
             this.txt_price.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_price.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_price.TextChanged += new System.EventHandler(this.txt_price_TextChanged);
+            this.txt_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_price_KeyPress);
+            this.txt_price.Leave += new System.EventHandler(this.txt_price_Leave);
             // 
             // txt_official_receipt
             // 
@@ -299,7 +224,7 @@
             this.txt_official_receipt.ShortcutsEnabled = true;
             this.txt_official_receipt.Size = new System.Drawing.Size(202, 30);
             this.txt_official_receipt.Style = MetroFramework.MetroColorStyle.Teal;
-            this.txt_official_receipt.TabIndex = 132;
+            this.txt_official_receipt.TabIndex = 2;
             this.txt_official_receipt.UseSelectable = true;
             this.txt_official_receipt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_official_receipt.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,7 +237,7 @@
             this.cb_vendors.Name = "cb_vendors";
             this.cb_vendors.Size = new System.Drawing.Size(323, 29);
             this.cb_vendors.Style = MetroFramework.MetroColorStyle.Teal;
-            this.cb_vendors.TabIndex = 131;
+            this.cb_vendors.TabIndex = 1;
             this.cb_vendors.UseSelectable = true;
             // 
             // btn_next
@@ -325,9 +250,10 @@
             this.btn_next.Location = new System.Drawing.Point(388, 442);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(93, 52);
-            this.btn_next.TabIndex = 149;
+            this.btn_next.TabIndex = 7;
             this.btn_next.Text = "Next";
             this.btn_next.UseVisualStyleBackColor = false;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
             // btn_back
             // 
@@ -336,7 +262,7 @@
             this.btn_back.Location = new System.Drawing.Point(158, 442);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(93, 52);
-            this.btn_back.TabIndex = 150;
+            this.btn_back.TabIndex = 8;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
@@ -347,12 +273,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_next);
-            this.Controls.Add(this.lbl_error_price);
-            this.Controls.Add(this.lbl_warranty_error);
-            this.Controls.Add(this.lbl_dop_error);
-            this.Controls.Add(this.lbl_vendor_error);
-            this.Controls.Add(this.lbl_receipt_error);
-            this.Controls.Add(this.lbl_error_quantity);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label8);
@@ -369,6 +289,7 @@
             this.Controls.Add(this.label1);
             this.Name = "uc_item_receipt";
             this.Size = new System.Drawing.Size(697, 538);
+            this.Load += new System.EventHandler(this.uc_item_receipt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_quantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,12 +300,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl_error_price;
-        private System.Windows.Forms.Label lbl_warranty_error;
-        private System.Windows.Forms.Label lbl_dop_error;
-        private System.Windows.Forms.Label lbl_vendor_error;
-        private System.Windows.Forms.Label lbl_receipt_error;
-        private System.Windows.Forms.Label lbl_error_quantity;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;

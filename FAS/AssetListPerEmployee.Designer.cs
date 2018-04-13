@@ -24,7 +24,11 @@ namespace FAS {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class AssetListPerEmployee : global::System.Data.DataSet {
         
-        private AssetsDataTable tableAssets;
+        private AssetsModelDataTable tableAssetsModel;
+        
+        private EmployeeDataTable tableEmployee;
+        
+        private global::System.Data.DataRelation relationAssetsModel_Employee;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +58,11 @@ namespace FAS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Assets"] != null)) {
-                    base.Tables.Add(new AssetsDataTable(ds.Tables["Assets"]));
+                if ((ds.Tables["AssetsModel"] != null)) {
+                    base.Tables.Add(new AssetsModelDataTable(ds.Tables["AssetsModel"]));
+                }
+                if ((ds.Tables["Employee"] != null)) {
+                    base.Tables.Add(new EmployeeDataTable(ds.Tables["Employee"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +86,19 @@ namespace FAS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AssetsDataTable Assets {
+        public AssetsModelDataTable AssetsModel {
             get {
-                return this.tableAssets;
+                return this.tableAssetsModel;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public EmployeeDataTable Employee {
+            get {
+                return this.tableEmployee;
             }
         }
         
@@ -152,8 +169,11 @@ namespace FAS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Assets"] != null)) {
-                    base.Tables.Add(new AssetsDataTable(ds.Tables["Assets"]));
+                if ((ds.Tables["AssetsModel"] != null)) {
+                    base.Tables.Add(new AssetsModelDataTable(ds.Tables["AssetsModel"]));
+                }
+                if ((ds.Tables["Employee"] != null)) {
+                    base.Tables.Add(new EmployeeDataTable(ds.Tables["Employee"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,12 +208,19 @@ namespace FAS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAssets = ((AssetsDataTable)(base.Tables["Assets"]));
+            this.tableAssetsModel = ((AssetsModelDataTable)(base.Tables["AssetsModel"]));
             if ((initTable == true)) {
-                if ((this.tableAssets != null)) {
-                    this.tableAssets.InitVars();
+                if ((this.tableAssetsModel != null)) {
+                    this.tableAssetsModel.InitVars();
                 }
             }
+            this.tableEmployee = ((EmployeeDataTable)(base.Tables["Employee"]));
+            if ((initTable == true)) {
+                if ((this.tableEmployee != null)) {
+                    this.tableEmployee.InitVars();
+                }
+            }
+            this.relationAssetsModel_Employee = this.Relations["AssetsModel_Employee"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -204,13 +231,25 @@ namespace FAS {
             this.Namespace = "http://tempuri.org/AssetListPerEmployee.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAssets = new AssetsDataTable();
-            base.Tables.Add(this.tableAssets);
+            this.tableAssetsModel = new AssetsModelDataTable();
+            base.Tables.Add(this.tableAssetsModel);
+            this.tableEmployee = new EmployeeDataTable();
+            base.Tables.Add(this.tableEmployee);
+            this.relationAssetsModel_Employee = new global::System.Data.DataRelation("AssetsModel_Employee", new global::System.Data.DataColumn[] {
+                        this.tableAssetsModel.EmployeeColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEmployee.FirstNameColumn}, false);
+            this.Relations.Add(this.relationAssetsModel_Employee);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeAssets() {
+        private bool ShouldSerializeAssetsModel() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeEmployee() {
             return false;
         }
         
@@ -270,41 +309,42 @@ namespace FAS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void AssetsRowChangeEventHandler(object sender, AssetsRowChangeEvent e);
+        public delegate void AssetsModelRowChangeEventHandler(object sender, AssetsModelRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void EmployeeRowChangeEventHandler(object sender, EmployeeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AssetsDataTable : global::System.Data.TypedTableBase<AssetsRow> {
+        public partial class AssetsModelDataTable : global::System.Data.TypedTableBase<AssetsModelRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnemployee_id;
+            private global::System.Data.DataColumn columnPropertyTag;
             
-            private global::System.Data.DataColumn columnproperty_tag;
-            
-            private global::System.Data.DataColumn columnname;
+            private global::System.Data.DataColumn columnEmployee;
             
             private global::System.Data.DataColumn columndepartment;
             
             private global::System.Data.DataColumn columnposition;
             
-            private global::System.Data.DataColumn columncompany_id;
+            private global::System.Data.DataColumn columnEmployeeId;
             
-            private global::System.Data.DataColumn columnmodel;
+            private global::System.Data.DataColumn columnItems;
             
-            private global::System.Data.DataColumn columnserial_number;
+            private global::System.Data.DataColumn columnSerial_Number;
             
-            private global::System.Data.DataColumn columnprice;
+            private global::System.Data.DataColumn columnPrice;
             
-            private global::System.Data.DataColumn columnquantity;
+            private global::System.Data.DataColumn columnQuantity;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AssetsDataTable() {
-                this.TableName = "Assets";
+            public AssetsModelDataTable() {
+                this.TableName = "AssetsModel";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -312,7 +352,7 @@ namespace FAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AssetsDataTable(global::System.Data.DataTable table) {
+            internal AssetsModelDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -329,7 +369,7 @@ namespace FAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected AssetsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected AssetsModelDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -344,25 +384,17 @@ namespace FAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn employee_idColumn {
+            public global::System.Data.DataColumn PropertyTagColumn {
                 get {
-                    return this.columnemployee_id;
+                    return this.columnPropertyTag;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn property_tagColumn {
+            public global::System.Data.DataColumn EmployeeColumn {
                 get {
-                    return this.columnproperty_tag;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nameColumn {
-                get {
-                    return this.columnname;
+                    return this.columnEmployee;
                 }
             }
             
@@ -384,41 +416,41 @@ namespace FAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn company_idColumn {
+            public global::System.Data.DataColumn EmployeeIdColumn {
                 get {
-                    return this.columncompany_id;
+                    return this.columnEmployeeId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn modelColumn {
+            public global::System.Data.DataColumn ItemsColumn {
                 get {
-                    return this.columnmodel;
+                    return this.columnItems;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn serial_numberColumn {
+            public global::System.Data.DataColumn Serial_NumberColumn {
                 get {
-                    return this.columnserial_number;
+                    return this.columnSerial_Number;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn priceColumn {
+            public global::System.Data.DataColumn PriceColumn {
                 get {
-                    return this.columnprice;
+                    return this.columnPrice;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn quantityColumn {
+            public global::System.Data.DataColumn QuantityColumn {
                 get {
-                    return this.columnquantity;
+                    return this.columnQuantity;
                 }
             }
             
@@ -433,55 +465,54 @@ namespace FAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AssetsRow this[int index] {
+            public AssetsModelRow this[int index] {
                 get {
-                    return ((AssetsRow)(this.Rows[index]));
+                    return ((AssetsModelRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AssetsRowChangeEventHandler AssetsRowChanging;
+            public event AssetsModelRowChangeEventHandler AssetsModelRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AssetsRowChangeEventHandler AssetsRowChanged;
+            public event AssetsModelRowChangeEventHandler AssetsModelRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AssetsRowChangeEventHandler AssetsRowDeleting;
+            public event AssetsModelRowChangeEventHandler AssetsModelRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AssetsRowChangeEventHandler AssetsRowDeleted;
+            public event AssetsModelRowChangeEventHandler AssetsModelRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddAssetsRow(AssetsRow row) {
+            public void AddAssetsModelRow(AssetsModelRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AssetsRow AddAssetsRow(string id, string employee_id, string property_tag, string name, string department, string position, string company_id, string model, string serial_number, string price, string quantity) {
-                AssetsRow rowAssetsRow = ((AssetsRow)(this.NewRow()));
+            public AssetsModelRow AddAssetsModelRow(string id, string PropertyTag, string Employee, string department, string position, string EmployeeId, string Items, string Serial_Number, string Price, string Quantity) {
+                AssetsModelRow rowAssetsModelRow = ((AssetsModelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        employee_id,
-                        property_tag,
-                        name,
+                        PropertyTag,
+                        Employee,
                         department,
                         position,
-                        company_id,
-                        model,
-                        serial_number,
-                        price,
-                        quantity};
-                rowAssetsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAssetsRow);
-                return rowAssetsRow;
+                        EmployeeId,
+                        Items,
+                        Serial_Number,
+                        Price,
+                        Quantity};
+                rowAssetsModelRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAssetsModelRow);
+                return rowAssetsModelRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AssetsDataTable cln = ((AssetsDataTable)(base.Clone()));
+                AssetsModelDataTable cln = ((AssetsModelDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -489,23 +520,22 @@ namespace FAS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AssetsDataTable();
+                return new AssetsModelDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnemployee_id = base.Columns["employee_id"];
-                this.columnproperty_tag = base.Columns["property_tag"];
-                this.columnname = base.Columns["name"];
+                this.columnPropertyTag = base.Columns["PropertyTag"];
+                this.columnEmployee = base.Columns["Employee"];
                 this.columndepartment = base.Columns["department"];
                 this.columnposition = base.Columns["position"];
-                this.columncompany_id = base.Columns["company_id"];
-                this.columnmodel = base.Columns["model"];
-                this.columnserial_number = base.Columns["serial_number"];
-                this.columnprice = base.Columns["price"];
-                this.columnquantity = base.Columns["quantity"];
+                this.columnEmployeeId = base.Columns["EmployeeId"];
+                this.columnItems = base.Columns["Items"];
+                this.columnSerial_Number = base.Columns["Serial Number"];
+                this.columnPrice = base.Columns["Price"];
+                this.columnQuantity = base.Columns["Quantity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -513,53 +543,50 @@ namespace FAS {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnemployee_id = new global::System.Data.DataColumn("employee_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnemployee_id);
-                this.columnproperty_tag = new global::System.Data.DataColumn("property_tag", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproperty_tag);
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname);
+                this.columnPropertyTag = new global::System.Data.DataColumn("PropertyTag", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPropertyTag);
+                this.columnEmployee = new global::System.Data.DataColumn("Employee", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmployee);
                 this.columndepartment = new global::System.Data.DataColumn("department", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndepartment);
                 this.columnposition = new global::System.Data.DataColumn("position", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnposition);
-                this.columncompany_id = new global::System.Data.DataColumn("company_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncompany_id);
-                this.columnmodel = new global::System.Data.DataColumn("model", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmodel);
-                this.columnserial_number = new global::System.Data.DataColumn("serial_number", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnserial_number);
-                this.columnprice = new global::System.Data.DataColumn("price", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprice);
-                this.columnquantity = new global::System.Data.DataColumn("quantity", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnquantity);
-                this.columnemployee_id.Caption = "emp_id_pk";
+                this.columnEmployeeId = new global::System.Data.DataColumn("EmployeeId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmployeeId);
+                this.columnItems = new global::System.Data.DataColumn("Items", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItems);
+                this.columnSerial_Number = new global::System.Data.DataColumn("Serial Number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSerial_Number);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AssetsRow NewAssetsRow() {
-                return ((AssetsRow)(this.NewRow()));
+            public AssetsModelRow NewAssetsModelRow() {
+                return ((AssetsModelRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AssetsRow(builder);
+                return new AssetsModelRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AssetsRow);
+                return typeof(AssetsModelRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AssetsRowChanged != null)) {
-                    this.AssetsRowChanged(this, new AssetsRowChangeEvent(((AssetsRow)(e.Row)), e.Action));
+                if ((this.AssetsModelRowChanged != null)) {
+                    this.AssetsModelRowChanged(this, new AssetsModelRowChangeEvent(((AssetsModelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -567,8 +594,8 @@ namespace FAS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AssetsRowChanging != null)) {
-                    this.AssetsRowChanging(this, new AssetsRowChangeEvent(((AssetsRow)(e.Row)), e.Action));
+                if ((this.AssetsModelRowChanging != null)) {
+                    this.AssetsModelRowChanging(this, new AssetsModelRowChangeEvent(((AssetsModelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -576,8 +603,8 @@ namespace FAS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AssetsRowDeleted != null)) {
-                    this.AssetsRowDeleted(this, new AssetsRowChangeEvent(((AssetsRow)(e.Row)), e.Action));
+                if ((this.AssetsModelRowDeleted != null)) {
+                    this.AssetsModelRowDeleted(this, new AssetsModelRowChangeEvent(((AssetsModelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -585,14 +612,14 @@ namespace FAS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AssetsRowDeleting != null)) {
-                    this.AssetsRowDeleting(this, new AssetsRowChangeEvent(((AssetsRow)(e.Row)), e.Action));
+                if ((this.AssetsModelRowDeleting != null)) {
+                    this.AssetsModelRowDeleting(this, new AssetsModelRowChangeEvent(((AssetsModelRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveAssetsRow(AssetsRow row) {
+            public void RemoveAssetsModelRow(AssetsModelRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -619,7 +646,257 @@ namespace FAS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AssetsDataTable";
+                attribute2.FixedValue = "AssetsModelDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class EmployeeDataTable : global::System.Data.TypedTableBase<EmployeeRow> {
+            
+            private global::System.Data.DataColumn columnFirstName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EmployeeDataTable() {
+                this.TableName = "Employee";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal EmployeeDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected EmployeeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FirstNameColumn {
+                get {
+                    return this.columnFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EmployeeRow this[int index] {
+                get {
+                    return ((EmployeeRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EmployeeRowChangeEventHandler EmployeeRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EmployeeRowChangeEventHandler EmployeeRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EmployeeRowChangeEventHandler EmployeeRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EmployeeRowChangeEventHandler EmployeeRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddEmployeeRow(EmployeeRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EmployeeRow AddEmployeeRow(AssetsModelRow parentAssetsModelRowByAssetsModel_Employee) {
+                EmployeeRow rowEmployeeRow = ((EmployeeRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null};
+                if ((parentAssetsModelRowByAssetsModel_Employee != null)) {
+                    columnValuesArray[0] = parentAssetsModelRowByAssetsModel_Employee[2];
+                }
+                rowEmployeeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEmployeeRow);
+                return rowEmployeeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                EmployeeDataTable cln = ((EmployeeDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new EmployeeDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnFirstName = base.Columns["FirstName"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EmployeeRow NewEmployeeRow() {
+                return ((EmployeeRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new EmployeeRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(EmployeeRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.EmployeeRowChanged != null)) {
+                    this.EmployeeRowChanged(this, new EmployeeRowChangeEvent(((EmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.EmployeeRowChanging != null)) {
+                    this.EmployeeRowChanging(this, new EmployeeRowChangeEvent(((EmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.EmployeeRowDeleted != null)) {
+                    this.EmployeeRowDeleted(this, new EmployeeRowChangeEvent(((EmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.EmployeeRowDeleting != null)) {
+                    this.EmployeeRowDeleting(this, new EmployeeRowChangeEvent(((EmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveEmployeeRow(EmployeeRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AssetListPerEmployee ds = new AssetListPerEmployee();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "EmployeeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -663,15 +940,15 @@ namespace FAS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AssetsRow : global::System.Data.DataRow {
+        public partial class AssetsModelRow : global::System.Data.DataRow {
             
-            private AssetsDataTable tableAssets;
+            private AssetsModelDataTable tableAssetsModel;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AssetsRow(global::System.Data.DataRowBuilder rb) : 
+            internal AssetsModelRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAssets = ((AssetsDataTable)(this.Table));
+                this.tableAssetsModel = ((AssetsModelDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -679,62 +956,46 @@ namespace FAS {
             public string id {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.idColumn]));
+                        return ((string)(this[this.tableAssetsModel.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.idColumn] = value;
+                    this[this.tableAssetsModel.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string employee_id {
+            public string PropertyTag {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.employee_idColumn]));
+                        return ((string)(this[this.tableAssetsModel.PropertyTagColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'employee_id\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PropertyTag\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.employee_idColumn] = value;
+                    this[this.tableAssetsModel.PropertyTagColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string property_tag {
+            public string Employee {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.property_tagColumn]));
+                        return ((string)(this[this.tableAssetsModel.EmployeeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'property_tag\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Employee\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.property_tagColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string name {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssets.nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'name\' in table \'Assets\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssets.nameColumn] = value;
+                    this[this.tableAssetsModel.EmployeeColumn] = value;
                 }
             }
             
@@ -743,14 +1004,14 @@ namespace FAS {
             public string department {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.departmentColumn]));
+                        return ((string)(this[this.tableAssetsModel.departmentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'department\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'department\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.departmentColumn] = value;
+                    this[this.tableAssetsModel.departmentColumn] = value;
                 }
             }
             
@@ -759,227 +1020,280 @@ namespace FAS {
             public string position {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.positionColumn]));
+                        return ((string)(this[this.tableAssetsModel.positionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'position\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'position\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.positionColumn] = value;
+                    this[this.tableAssetsModel.positionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string company_id {
+            public string EmployeeId {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.company_idColumn]));
+                        return ((string)(this[this.tableAssetsModel.EmployeeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_id\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.company_idColumn] = value;
+                    this[this.tableAssetsModel.EmployeeIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string model {
+            public string Items {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.modelColumn]));
+                        return ((string)(this[this.tableAssetsModel.ItemsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'model\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Items\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.modelColumn] = value;
+                    this[this.tableAssetsModel.ItemsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string serial_number {
+            public string Serial_Number {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.serial_numberColumn]));
+                        return ((string)(this[this.tableAssetsModel.Serial_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'serial_number\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Serial Number\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.serial_numberColumn] = value;
+                    this[this.tableAssetsModel.Serial_NumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string price {
+            public string Price {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.priceColumn]));
+                        return ((string)(this[this.tableAssetsModel.PriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'price\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.priceColumn] = value;
+                    this[this.tableAssetsModel.PriceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string quantity {
+            public string Quantity {
                 get {
                     try {
-                        return ((string)(this[this.tableAssets.quantityColumn]));
+                        return ((string)(this[this.tableAssetsModel.QuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'quantity\' in table \'Assets\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'AssetsModel\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssets.quantityColumn] = value;
+                    this[this.tableAssetsModel.QuantityColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidNull() {
-                return this.IsNull(this.tableAssets.idColumn);
+                return this.IsNull(this.tableAssetsModel.idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetidNull() {
-                this[this.tableAssets.idColumn] = global::System.Convert.DBNull;
+                this[this.tableAssetsModel.idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isemployee_idNull() {
-                return this.IsNull(this.tableAssets.employee_idColumn);
+            public bool IsPropertyTagNull() {
+                return this.IsNull(this.tableAssetsModel.PropertyTagColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setemployee_idNull() {
-                this[this.tableAssets.employee_idColumn] = global::System.Convert.DBNull;
+            public void SetPropertyTagNull() {
+                this[this.tableAssetsModel.PropertyTagColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isproperty_tagNull() {
-                return this.IsNull(this.tableAssets.property_tagColumn);
+            public bool IsEmployeeNull() {
+                return this.IsNull(this.tableAssetsModel.EmployeeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setproperty_tagNull() {
-                this[this.tableAssets.property_tagColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnameNull() {
-                return this.IsNull(this.tableAssets.nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnameNull() {
-                this[this.tableAssets.nameColumn] = global::System.Convert.DBNull;
+            public void SetEmployeeNull() {
+                this[this.tableAssetsModel.EmployeeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdepartmentNull() {
-                return this.IsNull(this.tableAssets.departmentColumn);
+                return this.IsNull(this.tableAssetsModel.departmentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdepartmentNull() {
-                this[this.tableAssets.departmentColumn] = global::System.Convert.DBNull;
+                this[this.tableAssetsModel.departmentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspositionNull() {
-                return this.IsNull(this.tableAssets.positionColumn);
+                return this.IsNull(this.tableAssetsModel.positionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpositionNull() {
-                this[this.tableAssets.positionColumn] = global::System.Convert.DBNull;
+                this[this.tableAssetsModel.positionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iscompany_idNull() {
-                return this.IsNull(this.tableAssets.company_idColumn);
+            public bool IsEmployeeIdNull() {
+                return this.IsNull(this.tableAssetsModel.EmployeeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setcompany_idNull() {
-                this[this.tableAssets.company_idColumn] = global::System.Convert.DBNull;
+            public void SetEmployeeIdNull() {
+                this[this.tableAssetsModel.EmployeeIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsmodelNull() {
-                return this.IsNull(this.tableAssets.modelColumn);
+            public bool IsItemsNull() {
+                return this.IsNull(this.tableAssetsModel.ItemsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetmodelNull() {
-                this[this.tableAssets.modelColumn] = global::System.Convert.DBNull;
+            public void SetItemsNull() {
+                this[this.tableAssetsModel.ItemsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isserial_numberNull() {
-                return this.IsNull(this.tableAssets.serial_numberColumn);
+            public bool IsSerial_NumberNull() {
+                return this.IsNull(this.tableAssetsModel.Serial_NumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setserial_numberNull() {
-                this[this.tableAssets.serial_numberColumn] = global::System.Convert.DBNull;
+            public void SetSerial_NumberNull() {
+                this[this.tableAssetsModel.Serial_NumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IspriceNull() {
-                return this.IsNull(this.tableAssets.priceColumn);
+            public bool IsPriceNull() {
+                return this.IsNull(this.tableAssetsModel.PriceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetpriceNull() {
-                this[this.tableAssets.priceColumn] = global::System.Convert.DBNull;
+            public void SetPriceNull() {
+                this[this.tableAssetsModel.PriceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsquantityNull() {
-                return this.IsNull(this.tableAssets.quantityColumn);
+            public bool IsQuantityNull() {
+                return this.IsNull(this.tableAssetsModel.QuantityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetquantityNull() {
-                this[this.tableAssets.quantityColumn] = global::System.Convert.DBNull;
+            public void SetQuantityNull() {
+                this[this.tableAssetsModel.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EmployeeRow[] GetEmployeeRows() {
+                if ((this.Table.ChildRelations["AssetsModel_Employee"] == null)) {
+                    return new EmployeeRow[0];
+                }
+                else {
+                    return ((EmployeeRow[])(base.GetChildRows(this.Table.ChildRelations["AssetsModel_Employee"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class EmployeeRow : global::System.Data.DataRow {
+            
+            private EmployeeDataTable tableEmployee;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal EmployeeRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEmployee = ((EmployeeDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FirstName {
+                get {
+                    try {
+                        return ((string)(this[this.tableEmployee.FirstNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FirstName\' in table \'Employee\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEmployee.FirstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AssetsModelRow AssetsModelRow {
+                get {
+                    return ((AssetsModelRow)(this.GetParentRow(this.Table.ParentRelations["AssetsModel_Employee"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["AssetsModel_Employee"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFirstNameNull() {
+                return this.IsNull(this.tableEmployee.FirstNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFirstNameNull() {
+                this[this.tableEmployee.FirstNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -987,22 +1301,56 @@ namespace FAS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class AssetsRowChangeEvent : global::System.EventArgs {
+        public class AssetsModelRowChangeEvent : global::System.EventArgs {
             
-            private AssetsRow eventRow;
+            private AssetsModelRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AssetsRowChangeEvent(AssetsRow row, global::System.Data.DataRowAction action) {
+            public AssetsModelRowChangeEvent(AssetsModelRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AssetsRow Row {
+            public AssetsModelRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class EmployeeRowChangeEvent : global::System.EventArgs {
+            
+            private EmployeeRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EmployeeRowChangeEvent(EmployeeRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EmployeeRow Row {
                 get {
                     return this.eventRow;
                 }

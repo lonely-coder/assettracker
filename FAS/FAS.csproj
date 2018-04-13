@@ -142,6 +142,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>.resx</DependentUpon>
     </Compile>
+    <Compile Include="AssetListPerEmployee.cs">
+      <DependentUpon>AssetListPerEmployee.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AssetListPerEmployee.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,9 +157,11 @@
     <Compile Include="classes\CategoryRepository.cs" />
     <Compile Include="classes\Connection.cs" />
     <Compile Include="classes\Department.cs" />
+    <Compile Include="classes\IItems.cs" />
     <Compile Include="classes\ItemInventoryViewer.cs" />
     <Compile Include="classes\ItemModel.cs" />
     <Compile Include="classes\PositionRepository.cs" />
+    <Compile Include="classes\ReceiptModel.cs" />
     <Compile Include="classes\SubCategoryRepository.cs" />
     <Compile Include="classes\VendorRepository.cs" />
     <Compile Include="CrystalReport1.cs">
@@ -259,6 +264,7 @@
     </Compile>
     <Compile Include="classes\ItemCreator.cs" />
     <Compile Include="classes\ItemRepository.cs" />
+    <Compile Include="IReceipt.cs" />
     <Compile Include="ItemList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -284,12 +290,6 @@
     <Compile Include="uc_add_employee_asset.Designer.cs">
       <DependentUpon>uc_add_employee_asset.cs</DependentUpon>
     </Compile>
-    <Compile Include="uc_add_item.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uc_add_item.Designer.cs">
-      <DependentUpon>uc_add_item.cs</DependentUpon>
-    </Compile>
     <Compile Include="uc_add_item_details.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -301,6 +301,12 @@
     </Compile>
     <Compile Include="uc_item_receipt.Designer.cs">
       <DependentUpon>uc_item_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_item_serial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_item_serial.Designer.cs">
+      <DependentUpon>uc_item_serial.cs</DependentUpon>
     </Compile>
     <Compile Include="uc_vendor_list.cs">
       <SubType>UserControl</SubType>
@@ -484,9 +490,6 @@
     <EmbeddedResource Include="uc_add_employee_asset.resx">
       <DependentUpon>uc_add_employee_asset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uc_add_item.resx">
-      <DependentUpon>uc_add_item.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="uc_add_item_details.resx">
       <DependentUpon>uc_add_item_details.cs</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +510,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc_item_receipt.resx">
       <DependentUpon>uc_item_receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_item_serial.resx">
+      <DependentUpon>uc_item_serial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_vendor_list.resx">
       <DependentUpon>uc_vendor_list.cs</DependentUpon>
@@ -700,6 +706,14 @@
     <Content Include="app.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="icon\png\001-number-2.png" />
+    <None Include="icon\png\002-number-1.png" />
+    <None Include="icon\png\003-number.png" />
+    <None Include="icon\number.png" />
+    <None Include="icon\4.png" />
+    <None Include="Resources\001-number-2.png" />
+    <None Include="Resources\002-number-1.png" />
+    <None Include="Resources\003-number.png" />
     <Content Include="Treetog-Junior-Computer-ok.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

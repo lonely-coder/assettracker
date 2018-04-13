@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FAS
@@ -28,12 +22,8 @@ namespace FAS
 
         private void btn_add_asset_Click(object sender, EventArgs e)
         {
-            //uc_add_assets _add_assets = new uc_add_assets(_main_form);
-            //_main_form.panel_body.Controls.Clear();
-            //_main_form.panel_body.Controls.Add(_add_assets);
 
             uc_add_employee_asset _add_asset = new uc_add_employee_asset();
-            //_add_asset.TopLevel= false;
             _main_form.panel_body.Controls.Clear();
             _main_form.panel_body.Controls.Add(_add_asset);
             _add_asset.Show();
@@ -44,14 +34,6 @@ namespace FAS
         {
             frm_employee_info _add_employee = new frm_employee_info();
             _add_employee.ShowDialog();
-        }
-
-        private void btn_add_items_Click(object sender, EventArgs e)
-        {
-            uc_add_item _add_item = new uc_add_item(_main_form);
-            _main_form.panel_body.Controls.Clear();
-            _main_form.panel_body.Controls.Add(_add_item);
-            _main_form.lbl_current_tab.Text = "Add New Item";
         }
 
         private void btn_add_vendors_Click(object sender, EventArgs e)

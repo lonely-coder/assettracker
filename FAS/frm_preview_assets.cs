@@ -30,20 +30,23 @@ namespace FAS
         private void frm_preview_assets_Load(object sender, EventArgs e)
         {
             AssetsRepository assetRepository = new AssetsRepository();
+
+            //EmployeeAssets1.SetParameterValue("emp_id", _employee_id);
+            EmployeeAssets1.SetDataSource(assetRepository.GetEmployeeAssets(_employee_id));
+            //var data = assetRepository.SelectAssetsPerEmployee(_employee_id);
             
-            var data = assetRepository.SelectAssetsPerEmployee(_employee_id);
+            //DataSet ds = new DataSet();
 
-            DataSet ds = new DataSet();
-            ds.Tables.Add(data);
+            //ds.Tables.Add(data);
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                EmployeeAssets1.SetParameterValue("emp_id", _employee_id);
-                EmployeeAssets1.SetDataSource(ds.Tables[0]);
-            }
-            else {
-                MessageBox.Show("No data.");
-            }
+            //if (ds.Tables[0].Rows.Count > 0)
+            //{
+            //    EmployeeAssets1.SetParameterValue("emp_id", _employee_id);
+            //    EmployeeAssets1.SetDataSource(ds.Tables[0]);
+            //}
+            //else {
+            //    MessageBox.Show("No data.");
+            //}
         }
     }
 }

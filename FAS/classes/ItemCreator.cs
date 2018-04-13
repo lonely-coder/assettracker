@@ -15,8 +15,15 @@ namespace FAS
         ReceiptRepository receiptRepository;
         int _item_id = 0 ;
         int _receipt_id = 0;
-        
-        public ItemCreator(Items items,Receipt receipt,List<Serial> serial_list) {
+
+        public ItemCreator(Items items, Receipt receipt)
+        {
+            _connection = new Connection();
+            _items = items;
+            _receipt = receipt;
+         
+        }
+        public ItemCreator(Items items, Receipt receipt,List<Serial> serial_list) {
             _connection = new Connection ();
             _items = items;
             _receipt = receipt;
@@ -27,7 +34,7 @@ namespace FAS
                 return true;
             }
             else {
-                throw new ArgumentException(string.Format("-Please provide {0} serial number(s)", _items.Quantity == _serial_list.Count));
+                throw new ArgumentException(string.Format("-Please provide {0} serial number(s)", _items.Quantity - _serial_list.Count));
             }
             
         }
@@ -77,13 +84,14 @@ namespace FAS
             catch (MySqlException ex) {
                 transaction.Rollback();
                 Console.WriteLine("Error occured. Rolling back changes.");
-                throw new ArgumentException(ex.ToString());
+                throw new ArgumentException(ex.Message);
                 
             }
             catch (Exception ex) {
                 Console.WriteLine("Error occured. Rolling back changes.");
-                throw new ArgumentException(ex.ToString());
+                throw new ArgumentException(ex.Message);
             }
         }
+        
     }
 }

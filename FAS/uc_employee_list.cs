@@ -69,11 +69,11 @@ namespace FAS
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txt_filter.Text.Length == 0)
-            {
-                MessageBox.Show("Not found");
-            }
-            else {
+                EmployeeList();   
+        }
+        private void txt_filter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
                 EmployeeList();
             }
         }

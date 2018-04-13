@@ -13,7 +13,7 @@ namespace FAS
 
         employee_list_controller _employee_list;
 
-        Departments departments = new Departments();
+        DepartmentsRepository departmentsRepository = new DepartmentsRepository();
         Position position = new Position();
         EmployeeRepository employeeRepository;
 
@@ -76,9 +76,9 @@ namespace FAS
         {
             try
             {
-                Departments departments = new Departments();
+                DepartmentsRepository departmentsRepository = new DepartmentsRepository();
 
-                var list = departments.DepartmentList();
+                var list = departmentsRepository.DepartmentList();
                 var source = new BindingSource();
                 list.Insert(0, new Department() { DepartmentNames = "-Select-" });
                 source.DataSource = list;

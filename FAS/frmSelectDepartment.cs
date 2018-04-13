@@ -16,9 +16,9 @@ namespace FAS
             InitializeComponent();
         }
         private void Departments() {
-            Departments department = new Departments();
+            DepartmentsRepository departmentsRepository = new DepartmentsRepository();
 
-            var list = department.DepartmentList();
+            var list = departmentsRepository.DepartmentList();
             var source = new BindingSource();
             list.Insert(0,new Department() { DepartmentNames = "-Select-"});
             source.DataSource = list;

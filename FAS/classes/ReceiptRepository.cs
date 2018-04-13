@@ -23,9 +23,9 @@ namespace FAS
         public int LastInsertId() {
             return _last_insert_id;
         }
-        public List<Double> ItemPriceRange(int item_id) {
+        public List<decimal> ItemPriceRange(int item_id) {
 
-            List<Double> itemPrices = new List<Double>();
+            List<decimal> itemPrices = new List<decimal>();
             string query = @"SELECT DISTINCT price from item_receipt WHERE item_id = @item_id";
             using (var connection = _connection.GetConnection())
             {
@@ -35,7 +35,7 @@ namespace FAS
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read()) {
-                            itemPrices.Add(Convert.ToDouble(reader["price"].ToString()));
+                            itemPrices.Add(Convert.ToDecimal(reader["price"].ToString()));
                         }
                     }
                 }
@@ -44,7 +44,7 @@ namespace FAS
         }
         public List<Receipt> GetPrice(int id)
         {
-            double price = 0.00;
+            decimal price = 0.00m;
             List<Receipt> _priceList = new List<Receipt>();
             string query = @"SELECT price from item_receipt WHERE id = (SELECT item_receipt_id from item_serials where id = @id) LIMIT 1";
             using (var connection = _connection.GetConnection())
@@ -52,7 +52,7 @@ namespace FAS
                 using (var cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    price = Convert.ToDouble(cmd.ExecuteScalar());
+                    price = Convert.ToDecimal(cmd.ExecuteScalar());
                     _priceList.Add(new Receipt() { Price = price });
                 }
             }

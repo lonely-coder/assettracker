@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 namespace FAS
 {
-    public class Departments
+    public class DepartmentsRepository
     {
         Connection _connection;
-        public Departments() {
+        public DepartmentsRepository() {
             _connection = new Connection();
         }
 

@@ -7,7 +7,7 @@ namespace FAS
     public partial class employee_assets_controller : UserControl
     {
         uc_employee_with_assets _main;
-        public int _employeeId;
+        int _employeeId;
         int _user_id;
         int _privilege_id;
         public employee_assets_controller(int Id,int UserId)

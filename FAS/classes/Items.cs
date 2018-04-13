@@ -1,11 +1,8 @@
 ﻿using System;
-
-
 namespace FAS
 {
     public class Items
-    {
-        
+    {      
         private int _id = 0;
         private int _category_id = 0;
         private int _sub_category_id = 0;
@@ -23,9 +20,7 @@ namespace FAS
             {
                 this._id = value;
             }
-
         }
-
         public int CategoryId
         {
             get { return this._category_id; }
@@ -94,7 +89,7 @@ namespace FAS
         }
         public override string ToString()
         {
-            return _model;
+            return _model.ToString();
         }
 
     }

@@ -111,15 +111,6 @@ namespace FAS
         private void button2_Click(object sender, EventArgs e)
         {
             Items();
-            
-        }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            uc_add_item _item = new uc_add_item(this._main);
-            this._main.panel_body.Controls.Clear();
-            this._main.panel_body.Controls.Add(_item);
-            _item.Show();
-            
         }
     }
 }

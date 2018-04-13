@@ -32,7 +32,6 @@ namespace FAS
             {
                 _connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
                 _connection.Open();
-                Console.WriteLine("Database Connection Established.");
             }
             catch (MySqlException ex) {
                 
