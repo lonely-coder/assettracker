@@ -42,9 +42,7 @@ namespace FAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(metroComboBox1.SelectedValue.ToString());
-            frm_preview_scrap _print = new frm_preview_scrap(id);
-            _print.ShowDialog();
+            
         }
     }
 }

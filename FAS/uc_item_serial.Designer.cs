@@ -153,7 +153,6 @@
             // bt_add_serial
             // 
             this.bt_add_serial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
-            this.bt_add_serial.BackgroundImage = global::FAS.Properties.Resources.add;
             this.bt_add_serial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_add_serial.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
             this.bt_add_serial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

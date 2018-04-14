@@ -32,9 +32,7 @@ namespace FAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var deptId = int.Parse(metroComboBox1.SelectedValue.ToString());
-            frm_preview_employees _print = new frm_preview_employees(deptId);
-            _print.Show();
+            
         }
     }
 }

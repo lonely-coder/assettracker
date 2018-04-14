@@ -36,8 +36,7 @@ namespace FAS
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frm_print_per_department _print = new frm_print_per_department(int.Parse(metroComboBox1.SelectedValue.ToString()));
-            _print.ShowDialog();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

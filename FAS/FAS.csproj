@@ -164,32 +164,8 @@
     <Compile Include="classes\ReceiptModel.cs" />
     <Compile Include="classes\SubCategoryRepository.cs" />
     <Compile Include="classes\VendorRepository.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DamageItems.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DamageItems.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DepartmentAssets.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DepartmentAssets.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="classes\Employee.cs" />
     <Compile Include="classes\EmployeeRepository.cs" />
-    <Compile Include="Employeerpt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Employeerpt.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,47 +190,11 @@
     <Compile Include="frm_dashboard.Designer.cs">
       <DependentUpon>frm_dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_item_per_model.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_item_per_model.Designer.cs">
-      <DependentUpon>frm_item_per_model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_preview_all_items.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_preview_all_items.Designer.cs">
-      <DependentUpon>frm_preview_all_items.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_preview_assets.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_preview_assets.designer.cs">
       <DependentUpon>frm_preview_assets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_preview_employees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_preview_employees.designer.cs">
-      <DependentUpon>frm_preview_employees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_preview_scrap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_preview_scrap.Designer.cs">
-      <DependentUpon>frm_preview_scrap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_preview_vendors.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_preview_vendors.Designer.cs">
-      <DependentUpon>frm_preview_vendors.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_print_per_department.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_print_per_department.Designer.cs">
-      <DependentUpon>frm_print_per_department.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_test.cs">
       <SubType>Form</SubType>
@@ -265,12 +205,6 @@
     <Compile Include="classes\ItemCreator.cs" />
     <Compile Include="classes\ItemRepository.cs" />
     <Compile Include="IReceipt.cs" />
-    <Compile Include="ItemList.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ItemList.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="classes\Items.cs" />
     <Compile Include="classes\Logs.cs" />
     <Compile Include="classes\Receipt.cs" />
@@ -400,22 +334,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DamageItems.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DamageItems.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentAssets.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DepartmentAssets.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employeerpt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Employeerpt.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,26 +350,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_item_per_model.resx">
-      <DependentUpon>frm_item_per_model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_preview_all_items.resx">
-      <DependentUpon>frm_preview_all_items.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_preview_assets.resx">
       <DependentUpon>frm_preview_assets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_preview_employees.resx">
-      <DependentUpon>frm_preview_employees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_preview_scrap.resx">
-      <DependentUpon>frm_preview_scrap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_preview_vendors.resx">
-      <DependentUpon>frm_preview_vendors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_print_per_department.resx">
-      <DependentUpon>frm_print_per_department.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_department_picker.resx">
       <DependentUpon>frm_department_picker.cs</DependentUpon>
@@ -473,10 +373,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemList.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ItemList.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -709,6 +605,12 @@
     <None Include="Resources\001-number-2.png" />
     <None Include="Resources\002-number-1.png" />
     <None Include="Resources\003-number.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\people.multiple.png" />
+    <None Include="Resources\record.png" />
+    <None Include="Resources\people.profile.assets.png" />
+    <None Include="Resources\appbar.forklift.load.dark.png" />
+    <None Include="Resources\settings.png" />
     <Content Include="Treetog-Junior-Computer-ok.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -38,6 +38,7 @@ namespace FAS
             dg_employee_assets.Columns["EmployeeId"].Visible = false;
             dg_employee_assets.Columns["Price"].Visible = false;
             dg_employee_assets.Columns["Items"].Visible = false;
+            dg_employee_assets.Columns["Quantity"].Visible = false;
             dg_employee_assets.Columns["Serial"].Visible = false;
             dg_employee_assets.Columns["DateAcquired"].Visible = false;
             

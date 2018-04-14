@@ -82,8 +82,7 @@ namespace FAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frm_item_per_model _print = new frm_item_per_model(this._item_id);
-            _print.ShowDialog();
+            
         }
     }
 }

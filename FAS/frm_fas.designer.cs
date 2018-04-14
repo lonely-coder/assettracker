@@ -42,8 +42,11 @@
             this.panel_body = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_current_tab = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_navigation.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // htmlToolTip1
@@ -104,6 +107,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(2, 362);
             this.button1.Name = "button1";
@@ -122,6 +126,7 @@
             this.btn_items.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_items.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_items.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_items.Image = ((System.Drawing.Image)(resources.GetObject("btn_items.Image")));
             this.btn_items.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_items.Location = new System.Drawing.Point(2, 164);
             this.btn_items.Name = "btn_items";
@@ -140,6 +145,7 @@
             this.btn_vendors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_vendors.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_vendors.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_vendors.Image = ((System.Drawing.Image)(resources.GetObject("btn_vendors.Image")));
             this.btn_vendors.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_vendors.Location = new System.Drawing.Point(2, 296);
             this.btn_vendors.Name = "btn_vendors";
@@ -158,6 +164,7 @@
             this.btn_employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_employees.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_employees.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_employees.Image = global::FAS.Properties.Resources.people_profile1;
             this.btn_employees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_employees.Location = new System.Drawing.Point(2, 230);
             this.btn_employees.Name = "btn_employees";
@@ -176,6 +183,7 @@
             this.btn_assets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_assets.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_assets.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_assets.Image = global::FAS.Properties.Resources.people_profile_assets;
             this.btn_assets.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_assets.Location = new System.Drawing.Point(2, 98);
             this.btn_assets.Name = "btn_assets";
@@ -194,6 +202,7 @@
             this.btn_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_dashboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dashboard.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_dashboard.Image = global::FAS.Properties.Resources.home;
             this.btn_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_dashboard.Location = new System.Drawing.Point(2, 32);
             this.btn_dashboard.Name = "btn_dashboard";
@@ -215,6 +224,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(222, 90);
@@ -231,6 +242,30 @@
             this.lbl_current_tab.Size = new System.Drawing.Size(139, 37);
             this.lbl_current_tab.TabIndex = 36;
             this.lbl_current_tab.Text = "Dashboard";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(13, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 37);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Fix Assets";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(20, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 17);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Management System V 1.0";
             // 
             // frm_fas
             // 
@@ -252,6 +287,8 @@
             this.Load += new System.EventHandler(this.frm_fas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_navigation.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +309,7 @@
         internal System.Windows.Forms.Panel panel_body;
         private System.Windows.Forms.Button button1;
         internal System.Windows.Forms.Label lbl_current_tab;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label1;
     }
 }

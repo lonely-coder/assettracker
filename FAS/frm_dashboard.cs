@@ -41,49 +41,6 @@ namespace FAS
             frm_add_vendors _add_vendors = new frm_add_vendors();
             _add_vendors.ShowDialog();
         }
-
-        private void frm_delete_scrap_Click(object sender, EventArgs e)
-        {
-            //frm_scrap _scrap = new frm_scrap();
-            //_scrap.ShowDialog();
-        }
-
-        private void btn_emp_list_Click(object sender, EventArgs e)
-        {
-            frm_department_picker _pick_department = new frm_department_picker();
-            _pick_department.ShowDialog();
-        }
-
-        private void btn_vendor_list_Click(object sender, EventArgs e)
-        {
-            frm_preview_vendors _vendors = new frm_preview_vendors();
-            _vendors.ShowDialog();
-        }
-
-        private void btn_item_list_Click(object sender, EventArgs e)
-        {
-            frm_preview_all_items _items = new frm_preview_all_items();
-            _items.ShowDialog();
-        }
-
-        private void btn_employee_assets_Click(object sender, EventArgs e)
-        {
-            frm_preview_assets _print_assets = new frm_preview_assets();
-            _print_assets.ShowDialog();
-        }
-
-        private void btn_assets_per_department_Click(object sender, EventArgs e)
-        {
-            frmSelectDepartment _department = new frmSelectDepartment();
-            _department.ShowDialog();
-        }
-
-        private void btn_for_scrapping_Click(object sender, EventArgs e)
-        {
-            frm_select_dept_scrapt _scrap = new frm_select_dept_scrapt();
-            _scrap.ShowDialog();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             uc_add_item_details _add_item = new uc_add_item_details(_main_form);
