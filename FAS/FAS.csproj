@@ -278,6 +278,11 @@
     <Compile Include="classes\Serial.cs" />
     <Compile Include="classes\SerialRepository.cs" />
     <Compile Include="classes\ItemSerialProvider.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\EmployeeAssets.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -475,14 +480,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Reports\EmployeeAssets.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EmployeeAssets.cs</LastGenOutput>
@@ -706,11 +706,6 @@
     <Content Include="app.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="icon\png\001-number-2.png" />
-    <None Include="icon\png\002-number-1.png" />
-    <None Include="icon\png\003-number.png" />
-    <None Include="icon\number.png" />
-    <None Include="icon\4.png" />
     <None Include="Resources\001-number-2.png" />
     <None Include="Resources\002-number-1.png" />
     <None Include="Resources\003-number.png" />

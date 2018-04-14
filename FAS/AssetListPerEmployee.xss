@@ -10,14 +10,14 @@
     <Shape ID="DesignTable:Employee" ZOrder="2" X="560" Y="125" Height="48" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="44" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:AssetsModel_Employee" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:Employee_AssetsModel" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>511</X>
+          <X>560</X>
           <Y>149</Y>
         </Point>
         <Point>
-          <X>560</X>
+          <X>511</X>
           <Y>149</Y>
         </Point>
       </RoutePoints>

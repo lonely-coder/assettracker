@@ -1,7 +1,6 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Data;
 
 namespace FAS
 {
@@ -90,6 +89,7 @@ namespace FAS
                                 items.SubCategoryId = int.Parse(reader["sub_category_id"].ToString());
                                 items.HasSerial = int.Parse(reader["serialized"].ToString());
                                 items.Quantity = int.Parse(reader["quantity_on_hand"].ToString());
+                                
                             }
                         }
                     }

@@ -63,29 +63,9 @@ namespace FAS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _001_number_2 {
-            get {
-                object obj = ResourceManager.GetObject("001-number-2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _001_number_21 {
             get {
                 object obj = ResourceManager.GetObject("001-number-21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _002_number_1 {
-            get {
-                object obj = ResourceManager.GetObject("002-number-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,29 +83,9 @@ namespace FAS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _003_number {
-            get {
-                object obj = ResourceManager.GetObject("003-number", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _003_number1 {
             get {
                 object obj = ResourceManager.GetObject("003-number1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _4 {
-            get {
-                object obj = ResourceManager.GetObject("4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,16 +163,6 @@ namespace FAS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap appbar_forklift_load_dark {
-            get {
-                object obj = ResourceManager.GetObject("appbar_forklift_load_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap appbar_group {
             get {
                 object obj = ResourceManager.GetObject("appbar_group", resourceCulture);
@@ -263,16 +213,6 @@ namespace FAS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap appbar_home_dark {
-            get {
-                object obj = ResourceManager.GetObject("appbar_home_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap appbar_key_old {
             get {
                 object obj = ResourceManager.GetObject("appbar_key_old", resourceCulture);
@@ -306,16 +246,6 @@ namespace FAS.Properties {
         internal static System.Drawing.Bitmap appbar_people_multiple {
             get {
                 object obj = ResourceManager.GetObject("appbar_people_multiple", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appbar_people_multiple_dark {
-            get {
-                object obj = ResourceManager.GetObject("appbar_people_multiple_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,16 +296,6 @@ namespace FAS.Properties {
         internal static System.Drawing.Bitmap appbar_people_profile_assets {
             get {
                 object obj = ResourceManager.GetObject("appbar_people_profile_assets", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appbar_people_profile_dark {
-            get {
-                object obj = ResourceManager.GetObject("appbar_people_profile_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,26 +423,6 @@ namespace FAS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap number {
-            get {
-                object obj = ResourceManager.GetObject("number", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap number1 {
-            get {
-                object obj = ResourceManager.GetObject("number1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap print {
             get {
                 object obj = ResourceManager.GetObject("print", resourceCulture);
@@ -536,16 +436,6 @@ namespace FAS.Properties {
         internal static System.Drawing.Bitmap record {
             get {
                 object obj = ResourceManager.GetObject("record", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap record_dark {
-            get {
-                object obj = ResourceManager.GetObject("record_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

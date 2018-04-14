@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_model = new MetroFramework.Controls.MetroTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,11 +217,23 @@
             this.txt_model.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txt_model.TextChanged += new System.EventHandler(this.txt_model_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(26, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 22);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Item Details";
+            // 
             // uc_add_item_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "uc_add_item_details";
             this.Size = new System.Drawing.Size(697, 538);
@@ -228,6 +241,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -243,5 +257,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroTextBox txt_model;
+        private System.Windows.Forms.Label label1;
     }
 }

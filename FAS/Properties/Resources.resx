@@ -124,9 +124,6 @@
   <data name="ic_person_add_white_24dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\ic_person_add_white_24dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="001-number-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\png\001-number-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="appbar_group_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.group.delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,9 +135,6 @@
   </data>
   <data name="appbar_people_multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.people.multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="number" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\number.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,9 +166,6 @@
   <data name="employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\employees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appbar_people_multiple_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\appbar.people.multiple.dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="002-number-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\002-number-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,20 +175,11 @@
   <data name="appbar_power" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.power.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="002-number-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\png\002-number-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="magnify_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\magnify 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar_people_profile_add_clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.people.profile.add.clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appbar_people_profile_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\appbar.people.profile.dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appbar_forklift_load_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\appbar.forklift.load.dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,23 +190,14 @@
   <data name="add___Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\add - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="003-number" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\png\003-number.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="appbar_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appbar_home_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\appbar.home.dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar_people_magnify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.people.magnify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="record_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\record.dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar_people_profile_assets" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.people.profile.assets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,9 +229,6 @@
   <data name="appbar_key_old" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\appbar.key.old.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="serach" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\serach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -273,8 +243,5 @@
   </data>
   <data name="magnify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\magnify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="number1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\number.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

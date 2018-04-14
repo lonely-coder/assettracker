@@ -142,7 +142,6 @@ namespace FAS
                                             PositionName = reader["Pos Name"].ToString()
                                         }
                                     },
-                                    Quantity =int.Parse(reader["Quantity"].ToString())
                                 }
                                 );
                         }
@@ -191,7 +190,10 @@ namespace FAS
                 items.model as `Model`,
                 IFNULL(item_serials.serial_number,'N/A') as `Serial Number`,
                 assets.asset_price as `Price`                
-                FROM item_serials RIGHT JOIN(items LEFT JOIN(positions INNER JOIN(
+                FROM 
+                item_serials RIGHT JOIN(
+                items RIGHT JOIN(
+                positions INNER JOIN(
                 departments INNER JOIN(
                 employees RIGHT JOIN assets 
                 ON employees.id = assets.employee_id) 

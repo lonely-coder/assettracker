@@ -29,31 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_dashboard));
-            this.frm_delete_scrap = new System.Windows.Forms.Button();
             this.btn_add_vendors = new System.Windows.Forms.Button();
             this.btn_add_employee = new System.Windows.Forms.Button();
             this.btn_add_asset = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // frm_delete_scrap
-            // 
-            this.frm_delete_scrap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(94)))));
-            this.frm_delete_scrap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("frm_delete_scrap.BackgroundImage")));
-            this.frm_delete_scrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.frm_delete_scrap.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(127)))));
-            this.frm_delete_scrap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.frm_delete_scrap.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frm_delete_scrap.ForeColor = System.Drawing.Color.White;
-            this.frm_delete_scrap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.frm_delete_scrap.Location = new System.Drawing.Point(233, 124);
-            this.frm_delete_scrap.Name = "frm_delete_scrap";
-            this.frm_delete_scrap.Size = new System.Drawing.Size(195, 96);
-            this.frm_delete_scrap.TabIndex = 47;
-            this.frm_delete_scrap.Text = "Scrapped Items";
-            this.frm_delete_scrap.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.frm_delete_scrap.UseVisualStyleBackColor = false;
-            this.frm_delete_scrap.Click += new System.EventHandler(this.frm_delete_scrap_Click);
             // 
             // btn_add_vendors
             // 
@@ -137,7 +117,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(681, 499);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.frm_delete_scrap);
             this.Controls.Add(this.btn_add_vendors);
             this.Controls.Add(this.btn_add_employee);
             this.Controls.Add(this.btn_add_asset);
@@ -150,8 +129,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button frm_delete_scrap;
         private System.Windows.Forms.Button btn_add_vendors;
         internal System.Windows.Forms.Button btn_add_employee;
         internal System.Windows.Forms.Button btn_add_asset;
